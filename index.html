@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meishi Craft Studio | 個人事業主のためのプロ仕様名刺作成ジェネレーター</title>
+  <meta name="description" content="個人事業主・フリーランス向けの名刺Web作成ツール。リアルタイムプレビュー、QRコード生成、両面・縦横レイアウト切替、印刷・画像ダウンロード対応。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600;700&family=Outfit:wght@400;500;600;700&family=Zen+Kaku Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- QRCode.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- html2canvas CDN for image download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-id-card"></i></div>
+        <div class="brand-text">
+          <h1>Meishi Craft <span class="badge-pro">PRO</span></h1>
+          <p class="brand-sub">個人事業主・フリーランスのための名刺スタジオ</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btnSampleData" class="btn btn-ghost"><i class="fa-solid fa-wand-magic-sparkles"></i> サンプルデータ</button>
+        <button id="btnReset" class="btn btn-ghost text-danger"><i class="fa-solid fa-rotate-left"></i> リセット</button>
+        <button id="btnPrint" class="btn btn-secondary"><i class="fa-solid fa-print"></i> 印刷する</button>
+        <button id="btnDownloadPng" class="btn btn-primary"><i class="fa-solid fa-download"></i> PNG保存</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-main">
+    <div class="app-layout">
+
+      <!-- Left Panel: Controls & Input Form -->
+      <aside class="editor-panel">
+        
+        <!-- Navigation Tabs for Editor -->
+        <nav class="editor-tabs">
+          <button class="tab-btn active" data-tab="tab-template"><i class="fa-solid fa-palette"></i> デザイン・テーマ</button>
+          <button class="tab-btn" data-tab="tab-content"><i class="fa-solid fa-pen-to-square"></i> 名刺記載情報</button>
+          <button class="tab-btn" data-tab="tab-customize"><i class="fa-solid fa-sliders"></i> スタイル微調整</button>
+          <button class="tab-btn" data-tab="tab-guide"><i class="fa-solid fa-lightbulb"></i> 作成ガイド</button>
+        </nav>
+
+        <div class="tab-content-container">
+
+          <!-- TAB 1: DESIGN & TEMPLATES -->
+          <section id="tab-template" class="tab-pane active">
+            <div class="section-title">
+              <h3><i class="fa-solid fa-layer-group"></i> デザインテンプレートを選択</h3>
+              <p>業種やブランドイメージに合わせてワンタップで切り替え</p>
+            </div>
+
+            <div class="template-grid">
+              <div class="template-card active" data-template="minimal-modern">
+                <div class="template-preview t-minimal">
+                  <div class="tp-accent"></div>
+                  <div class="tp-line short"></div>
+                  <div class="tp-line"></div>
+                </div>
+                <div class="template-info">
+                  <span class="template-name">Minimal Modern</span>
+                  <span class="template-desc">Web/IT・フリーランス向け洗練デザイン</span>
+                </div>
+              </div>
+
+              <div class="template-card" data-template="executive-gold">
+                <div class="template-preview t-executive">
+                  <div class="tp-gold-bar"></div>
+                  <div class="tp-line short"></div>
+                  <div class="tp-line"></div>
+                </div>
+                <div class="template-info">
+                  <span class="template-name">Executive & Solid</span>
+                  <span class="template-desc">コンサルタント・士業向け信頼と重厚感</span>
+                </div>
+              </div>
+
+              <div class="template-card" data-template="creative-studio">
+                <div class="template-preview t-creative">
+                  <div class="tp-bg-shape"></div>
+                  <div class="tp-line short"></div>
+                  <div class="tp-line"></div>
+                </div>
+                <div class="template-info">
+                  <span class="template-name">Creative Studio</span>
+                  <span class="template-desc">デザイナー・建築・グラフィック向け</span>
+                </div>
+              </div>
+
+              <div class="template-card" data-template="warm-organic">
+                <div class="template-preview t-warm">
+                  <div class="tp-circle"></div>
+                  <div class="tp-line short"></div>
+                  <div class="tp-line"></div>
+                </div>
+                <div class="template-info">
+                  <span class="template-name">Warm Organic</span>
+                  <span class="template-desc">サロン・セラピスト・ハンドメイド系</span>
+                </div>
+              </div>
+
+              <div class="template-card" data-template="mono-clean">
+                <div class="template-preview t-mono">
+                  <div class="tp-border"></div>
+                  <div class="tp-line short"></div>
+                  <div class="tp-line"></div>
+                </div>
+                <div class="template-info">
+                  <span class="template-name">Monochrome Clean</span>
+                  <span class="template-desc">シンプル極限・高コントラスト</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orientation & Side Selector -->
+            <div class="form-group-card">
+              <h4><i class="fa-solid fa-rotate"></i> 向きとレイアウト設定</h4>
+              <div class="flex-row gap-md">
+                <div class="form-control-group flex-1">
+                  <label>名刺の向き</label>
+                  <div class="segmented-control">
+                    <button class="seg-btn active" data-orientation="horizontal"><i class="fa-solid fa-grip-lines"></i> 横型 (標準)</button>
+                    <button class="seg-btn" data-orientation="vertical"><i class="fa-solid fa-grip-lines-vertical"></i> 縦型</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB 2: CONTENT INPUT -->
+          <section id="tab-content" class="tab-pane">
+            <div class="section-title">
+              <h3><i class="fa-solid fa-address-card"></i> 名刺の記載情報</h3>
+              <p>入力した内容はリアルタイムでプレビューに反映されます</p>
+            </div>
+
+            <!-- 表面情報 -->
+            <div class="accordion-item open">
+              <div class="accordion-header">
+                <span><i class="fa-solid fa-id-badge"></i> 表面の情報</span>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+              </div>
+              <div class="accordion-body">
+
+                <div class="form-grid">
+                  <div class="form-group col-span-2">
+                    <label for="inputCompanyName">屋号・事業名 / 会社名 <span class="required">*</span></label>
+                    <input type="text" id="inputCompanyName" placeholder="例: ant-graphics Studio" value="Lumina Works">
+                  </div>
+
+                  <div class="form-group col-span-2">
+                    <label for="inputCatchphrase">キャッチコピー / 専門領域</label>
+                    <input type="text" id="inputCatchphrase" placeholder="例: UI/UXデザイン & Web制作パートナー" value="UI/UX Design & Web Strategy">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputNameJa">氏名（日本語） <span class="required">*</span></label>
+                    <input type="text" id="inputNameJa" placeholder="例: 山田 太郎" value="佐藤 翔太">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputNameEn">英字表記 / フリガナ</label>
+                    <input type="text" id="inputNameEn" placeholder="例: SHOTA SATO" value="SHOTA SATO">
+                  </div>
+
+                  <div class="form-group col-span-2">
+                    <label for="inputTitle">肩書き・職種 <span class="required">*</span></label>
+                    <input type="text" id="inputTitle" placeholder="例: 代表 / フリーランスデザイナー" value="代表 / UI/UXデザイナー">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPhone">電話番号</label>
+                    <input type="text" id="inputPhone" placeholder="090-0000-0000" value="090-1234-5678">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputEmail">メールアドレス</label>
+                    <input type="email" id="inputEmail" placeholder="info@example.com" value="sato@luminaworks.jp">
+                  </div>
+
+                  <div class="form-group col-span-2">
+                    <label for="inputWebsite">Webサイト / ポートフォリオ URL</label>
+                    <input type="text" id="inputWebsite" placeholder="https://example.com" value="https://luminaworks.jp">
+                  </div>
+
+                  <div class="form-group col-span-2">
+                    <label for="inputAddress">住所・活動拠点</label>
+                    <input type="text" id="inputAddress" placeholder="〒150-0001 東京都渋谷区神宮前1-2-3" value="〒150-0001 東京都渋谷区神宮前 1-2-3">
+                  </div>
+
+                  <div class="form-group col-span-2">
+                    <label for="inputLogoFile">ロゴ画像（任意）</label>
+                    <div class="file-upload-box">
+                      <input type="file" id="inputLogoFile" accept="image/*">
+                      <div class="file-upload-content">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>ロゴ画像をアップロード (PNG/JPG)</span>
+                      </div>
+                    </div>
+                    <button type="button" id="btnRemoveLogo" class="btn btn-link text-danger text-sm mt-xs style-hidden"><i class="fa-solid fa-trash"></i> ロゴを削除</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 裏面情報 -->
+            <div class="accordion-item open">
+              <div class="accordion-header">
+                <span><i class="fa-solid fa-repeat"></i> 裏面の情報（PR・事業内容）</span>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+              </div>
+              <div class="accordion-body">
+                <div class="form-group">
+                  <div class="flex-between">
+                    <label for="toggleBackside">裏面を印刷・作成する</label>
+                    <input type="checkbox" id="toggleBackside" class="toggle-checkbox" checked>
+                  </div>
+                </div>
+
+                <div id="backsideFormContainer">
+                  <div class="form-group">
+                    <label for="inputBackHeader">裏面見出し / メッセージ</label>
+                    <input type="text" id="inputBackHeader" placeholder="事業内容・対応可能業務" value="SERVICES & SYSTEM MANAGEMENT">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputBackServices">主な事業内容・提供価値（箇条書き）</label>
+                    <textarea id="inputBackServices" rows="5" placeholder="・アプリ開発・システム管理...">【介護DX アプリ開発 & システム管理・運用】
+・利用者管理（基本情報・ケアプラン履歴の一元化）
+・売上・請求管理（事業所経営の可視化）
+・利用者ファイルの自動仕分け（書類整理の手間を大幅削減）
+・介護DX導入支援・業務フロー改善コンサルティング</textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="flex-between">
+                      <label for="toggleQr">QRコードを表示（ポートフォリオ・LINEなど）</label>
+                      <input type="checkbox" id="toggleQr" class="toggle-checkbox" checked>
+                    </div>
+                  </div>
+
+                  <div id="qrConfigGroup" class="form-group">
+                    <label for="inputQrUrl">QRコードの埋め込みURL</label>
+                    <input type="text" id="inputQrUrl" placeholder="https://example.com" value="https://luminaworks.jp">
+                    <small class="help-text">スマホカメラでスキャンするとこのURLが開きます</small>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- TAB 3: CUSTOMIZATION -->
+          <section id="tab-customize" class="tab-pane">
+            <div class="section-title">
+              <h3><i class="fa-solid fa-sliders"></i> カラー & フォントの微調整</h3>
+              <p>お好みのカラーパレットやフォントで個性を表現できます</p>
+            </div>
+
+            <!-- Font Selector -->
+            <div class="form-group-card">
+              <h4><i class="fa-solid fa-font"></i> タイポグラフィ（フォント）</h4>
+              <div class="form-group">
+                <label for="selectFontFamily">フォントスタイル</label>
+                <select id="selectFontFamily" class="form-select">
+                  <option value="font-sans-modern" selected>モダン・ゴシック (Noto Sans JP & Inter)</option>
+                  <option value="font-sans-clean">クリーン・角ゴ (Zen Kaku Gothic)</option>
+                  <option value="font-serif">エレガント・明朝 (Noto Serif JP & Garamond)</option>
+                  <option value="font-display">スタイリッシュ (Outfit & Noto Sans JP)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Color Palette Adjustments -->
+            <div class="form-group-card">
+              <h4><i class="fa-solid fa-droplet"></i> カラー設定</h4>
+              
+              <div class="color-pickers-grid">
+                <div class="color-picker-item">
+                  <label for="colorPrimary">メインテーマ色</label>
+                  <div class="color-input-wrapper">
+                    <input type="color" id="colorPrimary" value="#1e293b">
+                    <span id="colorPrimaryHex" class="color-hex">#1E293B</span>
+                  </div>
+                </div>
+
+                <div class="color-picker-item">
+                  <label for="colorAccent">アクセント色</label>
+                  <div class="color-input-wrapper">
+                    <input type="color" id="colorAccent" value="#3b82f6">
+                    <span id="colorAccentHex" class="color-hex">#3B82F6</span>
+                  </div>
+                </div>
+
+                <div class="color-picker-item">
+                  <label for="colorBg">背景色</label>
+                  <div class="color-input-wrapper">
+                    <input type="color" id="colorBg" value="#ffffff">
+                    <span id="colorBgHex" class="color-hex">#FFFFFF</span>
+                  </div>
+                </div>
+
+                <div class="color-picker-item">
+                  <label for="colorText">文字基本色</label>
+                  <div class="color-input-wrapper">
+                    <input type="color" id="colorText" value="#0f172a">
+                    <span id="colorTextHex" class="color-hex">#0F172A</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Presets -->
+              <div class="preset-colors mt-md">
+                <label>プリセットカラー:</label>
+                <div class="preset-dots">
+                  <button class="color-dot" style="background:#1e293b;" data-primary="#1e293b" data-accent="#3b82f6" data-bg="#ffffff" data-text="#0f172a" title="Naval Blue"></button>
+                  <button class="color-dot" style="background:#0f766e;" data-primary="#0f766e" data-accent="#0d9488" data-bg="#ffffff" data-text="#134e4a" title="Deep Teal"></button>
+                  <button class="color-dot" style="background:#7c2d12;" data-primary="#7c2d12" data-accent="#d97706" data-bg="#fffbe5" data-text="#451a03" title="Warm Amber"></button>
+                  <button class="color-dot" style="background:#18181b;" data-primary="#18181b" data-accent="#a1a1aa" data-bg="#09090b" data-text="#f4f4f5" title="Dark Mode"></button>
+                  <button class="color-dot" style="background:#831843;" data-primary="#831843" data-accent="#db2777" data-bg="#fff1f2" data-text="#500724" title="Rose Wine"></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fine-tuning Slider Controls -->
+            <div class="form-group-card">
+              <h4><i class="fa-solid fa-expand"></i> サイズ調整</h4>
+              <div class="form-group">
+                <div class="flex-between">
+                  <label for="rangeFontSize">全体文字サイズ比率</label>
+                  <span id="valFontSize">100%</span>
+                </div>
+                <input type="range" id="rangeFontSize" min="80" max="120" value="100" class="form-range">
+              </div>
+            </div>
+
+          </section>
+
+          <!-- TAB 4: FREELANCE GUIDE -->
+          <section id="tab-guide" class="tab-pane">
+            <div class="section-title">
+              <h3><i class="fa-solid fa-book-open"></i> 個人事業主の名刺作成ガイド</h3>
+              <p>失敗しない名刺作成のコツとよくある疑問を解決</p>
+            </div>
+
+            <div class="guide-cards">
+              <div class="guide-card">
+                <div class="guide-icon"><i class="fa-solid fa-house-lock"></i></div>
+                <div class="guide-content">
+                  <h4>自宅住所を載せるべき？</h4>
+                  <p>プライバシーを守りたい場合、詳細な部屋番号まで書かず「東京都渋谷区」などのエリアのみにするか、バーチャルオフィスの住所を載せるのが一般的です。</p>
+                </div>
+              </div>
+
+              <div class="guide-card">
+                <div class="guide-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="guide-content">
+                  <h4>電話番号はどうする？</h4>
+                  <p>個人用と分けたい場合は「050」から始まるIP電話サービスや事業用格安SIMを活用するか、Web問い合わせフォームURL/QRコードを主軸にする選択肢もあります。</p>
+                </div>
+              </div>
+
+              <div class="guide-card">
+                <div class="guide-icon"><i class="fa-solid fa-qrcode"></i></div>
+                <div class="guide-content">
+                  <h4>裏面活用の決定版：QRコード</h4>
+                  <p>ポートフォリオ、問い合わせフォーム、LINE公式アカウントのQRコードを裏面に置くことで、渡した後の成約率や連絡率が大きく向上します。</p>
+                </div>
+              </div>
+
+              <div class="guide-card">
+                <div class="guide-icon"><i class="fa-solid fa-print"></i></div>
+                <div class="guide-content">
+                  <h4>印刷用紙の選び方</h4>
+                  <p>ネット印刷（ラクスルやグラフィックなど）を利用する場合、標準紙の「マットコート 220kg」や温かみのある「高級ヌーボ」を選ぶと、手触りの良い高級感が演出できます。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </aside>
+
+      <!-- Right Panel: Live Interactive Preview -->
+      <section class="preview-panel">
+        
+        <div class="preview-toolbar">
+          <div class="preview-view-switch">
+            <button id="btnViewBoth" class="btn-sm-tab active"><i class="fa-solid fa-columns"></i> 表面・裏面 両方</button>
+            <button id="btnViewFront" class="btn-sm-tab"><i class="fa-solid fa-square"></i> 表面のみ</button>
+            <button id="btnViewBack" class="btn-sm-tab"><i class="fa-solid fa-square text-muted"></i> 裏面のみ</button>
+          </div>
+          <div class="preview-size-indicator">
+            <i class="fa-solid fa-ruler-combined"></i> 日本標準規格: 91mm × 55mm (350 DPI 相当)
+          </div>
+        </div>
+
+        <div class="card-stage-wrapper">
+          <div id="cardStage" class="card-stage orientation-horizontal template-minimal-modern font-sans-modern">
+            
+            <!-- FRONT SIDE -->
+            <div id="cardFront" class="card-element card-front">
+              <div class="card-inner">
+                
+                <!-- Background decoration element -->
+                <div class="card-bg-deco"></div>
+
+                <!-- Header / Logo & Company -->
+                <div class="card-header-zone">
+                  <div id="frontLogoWrap" class="card-logo style-hidden">
+                    <img id="frontLogoImg" src="" alt="Logo">
+                  </div>
+                  <div class="card-brand-group">
+                    <div id="dispCompanyName" class="disp-company">Lumina Works</div>
+                    <div id="dispCatchphrase" class="disp-catchphrase">UI/UX Design & Web Strategy</div>
+                  </div>
+                </div>
+
+                <!-- Middle / Personal Info -->
+                <div class="card-person-zone">
+                  <div id="dispTitle" class="disp-title">代表 / UI/UXデザイナー</div>
+                  <div class="name-block">
+                    <h2 id="dispNameJa" class="disp-name-ja">佐藤 翔太</h2>
+                    <span id="dispNameEn" class="disp-name-en">SHOTA SATO</span>
+                  </div>
+                </div>
+
+                <!-- Bottom / Contacts -->
+                <div class="card-contact-zone">
+                  <div id="wrapPhone" class="contact-item">
+                    <i class="fa-solid fa-phone contact-icon"></i>
+                    <span id="dispPhone">090-1234-5678</span>
+                  </div>
+                  <div id="wrapEmail" class="contact-item">
+                    <i class="fa-solid fa-envelope contact-icon"></i>
+                    <span id="dispEmail">sato@luminaworks.jp</span>
+                  </div>
+                  <div id="wrapWebsite" class="contact-item">
+                    <i class="fa-solid fa-globe contact-icon"></i>
+                    <span id="dispWebsite">https://luminaworks.jp</span>
+                  </div>
+                  <div id="wrapAddress" class="contact-item col-full">
+                    <i class="fa-solid fa-location-dot contact-icon"></i>
+                    <span id="dispAddress">〒150-0001 東京都渋谷区神宮前 1-2-3</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-label">表面</div>
+            </div>
+
+            <!-- BACK SIDE -->
+            <div id="cardBack" class="card-element card-back">
+              <div class="card-inner">
+                
+                <!-- Background decoration element -->
+                <div class="card-bg-deco-back"></div>
+
+                <div class="back-content-grid">
+                  <div class="back-text-col">
+                    <h3 id="dispBackHeader" class="disp-back-header">SERVICES & SPECIALTIES</h3>
+                    <div class="disp-back-divider"></div>
+                    <div id="dispBackServices" class="disp-back-services">
+                      <!-- Rendered by JS as list or paragraphs -->
+                    </div>
+                  </div>
+
+                  <div id="wrapQrContainer" class="back-qr-col">
+                    <div id="qrCodeTarget" class="qr-box"></div>
+                    <span class="qr-label"><i class="fa-solid fa-arrow-pointer"></i> Scan to View Portfolio</span>
+                  </div>
+                </div>
+
+                <div class="back-footer-brand">
+                  <span id="dispBackBrandSub">Lumina Works</span>
+                </div>
+
+              </div>
+              <div class="card-label">裏面</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Hint Footer -->
+        <div class="preview-footer-tip">
+          <p><i class="fa-solid fa-circle-info"></i> 「PNG保存」を押すと、表面・裏面の高解像度画像を直接保存できます。印刷会社への入稿やWeb掲載用にお使いください。</p>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Print Sheet Container (Invisible in normal view, active in print) -->
+  <div id="printSheet" class="print-only">
+    <div class="print-page">
+      <div id="printTargetFront" class="print-card"></div>
+      <div id="printTargetBack" class="print-card"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
