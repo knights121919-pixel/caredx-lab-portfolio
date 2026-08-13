@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupOrientationSelector();
     setupColorPickers();
     updateQrCode();
+    setLogoUrl('logo1.jpg');
     renderAll();
   }
 
@@ -167,9 +168,22 @@ document.addEventListener('DOMContentLoaded', () => {
       cardBack.style.fontSize = `${scale}em`;
     });
 
-    // Logo Upload
-    inputLogoFile.addEventListener('change', handleLogoUpload);
-    btnRemoveLogo.addEventListener('click', removeLogo);
+  // Logo Upload & Presets
+  const btnPresetLogo1 = document.getElementById('btnPresetLogo1');
+  const btnPresetLogo2 = document.getElementById('btnPresetLogo2');
+
+  btnPresetLogo1.addEventListener('click', () => setLogoUrl('logo1.jpg'));
+  btnPresetLogo2.addEventListener('click', () => setLogoUrl('logo2.jpg'));
+
+  function setLogoUrl(url) {
+    state.logoUrl = url;
+    frontLogoImg.src = url;
+    frontLogoWrap.classList.remove('style-hidden');
+    btnRemoveLogo.classList.remove('style-hidden');
+  }
+
+  inputLogoFile.addEventListener('change', handleLogoUpload);
+  btnRemoveLogo.addEventListener('click', removeLogo);
 
     // View Switchers
     btnViewBoth.addEventListener('click', () => setViewMode('both'));
@@ -393,17 +407,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadSampleData() {
     inputCompanyName.value = "Care DX Studio";
     inputCatchphrase.value = "ケアマネ業務をDXで加速。アプリ開発からシステム管理まで";
-    inputNameJa.value = "佐藤 翔太";
-    inputNameEn.value = "SHOTA SATO";
+    inputNameJa.value = "小林 健一";
+    inputNameEn.value = "KENICHI KOBAYASHI";
     inputTitle.value = "代表 / 介護DXアプリ開発・システム管理者";
     inputPhone.value = "090-1234-5678";
-    inputEmail.value = "sato@caredx-studio.jp";
-    inputWebsite.value = "https://caredx-studio.jp";
+    inputEmail.value = "k.kobayashi@caredx-lab.com";
+    inputWebsite.value = "https://caredx-lab.com";
     inputAddress.value = "〒150-0001 東京都渋谷区神宮前 1-2-3";
 
-    inputBackHeader.value = "SYSTEM DEVELOPMENT & MANAGEMENT";
-    inputBackServices.value = "【アプリ開発 & システム管理・運用】\n・利用者管理システム（基本情報・ケアプラン履歴の一元化）\n・売上・請求管理システム（事業所経営の可視化）\n・利用者ファイルの自動仕分けアプリ（書類整理の手間を大幅削減）\n・介護DX導入支援・業務フロー改善コンサルティング";
-    inputQrUrl.value = "https://caredx-studio.jp";
+    inputBackHeader.value = "SERVICES & SOLUTIONS";
+    inputBackServices.value = "【ケアマネDX アプリ開発 & システム管理】\n・LuminaCare（介護記録・利用者管理DXアプリ）\n・CarePlan Checker（AI書類監査・不整合検知99.8%）\n・利用者ファイルの自動仕分けアプリ開発\n・売上・請求管理 ＆ 介護DX導入コンサルティング";
+    inputQrUrl.value = "https://caredx-lab.com";
 
     renderAll();
     
