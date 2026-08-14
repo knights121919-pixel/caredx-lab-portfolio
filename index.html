@@ -162,9 +162,24 @@
         </p>
       </div>
 
-      <!-- 7 Key Features Grid -->
+      <!-- 8 Key Features Grid -->
       <div class="lumina-features-grid">
         
+        <!-- Feature 0: Core Client Management UI (v3.36.0) -->
+        <div class="lumina-feature-card featured-main-card">
+          <span class="lumina-card-num" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">Core System UI</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8;"><i class="fa-solid fa-table-list"></i></div>
+            <h3 class="lumina-card-title">📋 利用者管理・加算・請求の一元化テーブル (v3.36.0)</h3>
+          </div>
+          <p class="lumina-card-desc">実業務の現場に合わせた「利用者管理」インターフェース。氏名・介護度・契約有効期間・短期目標・体制加算・モニタリング日・請求種別（通常・請求対象・月遅れ）を1画面で直感的に一覧・更新操作が可能です。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 申請中・今月迄・有効の自動ステータスバッジ</li>
+            <li><i class="fa-solid fa-check"></i> 期限アラート＆ワンクリック月遅れ請求対応</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="main-ui"><i class="fa-solid fa-circle-play"></i> 実機画面デモを体験する</button>
+        </div>
+
         <!-- Feature 1: AI OCR -->
         <div class="lumina-feature-card">
           <span class="lumina-card-num">Feature 01</span>
@@ -296,7 +311,8 @@
 
         <!-- Navigation Tabs -->
         <div class="lumina-sim-tabs">
-          <button class="lumina-tab-btn active" data-tab="ocr"><i class="fa-solid fa-robot"></i> AI OCR解析</button>
+          <button class="lumina-tab-btn active" data-tab="main-ui"><i class="fa-solid fa-table-list"></i> 利用者管理画面 (実機UI v3.36.0)</button>
+          <button class="lumina-tab-btn" data-tab="ocr"><i class="fa-solid fa-robot"></i> AI OCR解析</button>
           <button class="lumina-tab-btn" data-tab="alert"><i class="fa-solid fa-calendar-check"></i> 認定期限・アラート</button>
           <button class="lumina-tab-btn" data-tab="kasan"><i class="fa-solid fa-calculator"></i> 加算・返戻管理</button>
           <button class="lumina-tab-btn" data-tab="csv"><i class="fa-solid fa-file-csv"></i> CSV実績照合</button>
@@ -308,8 +324,321 @@
         <!-- Simulator Content Panels -->
         <div class="lumina-sim-content">
 
+          <!-- Panel 0: Main UI (Client Management Dashboard v3.36.0) -->
+          <div id="panel-main-ui" class="lumina-panel active">
+            <div class="lc-app-container">
+              <!-- Left Sidebar Navigation -->
+              <aside class="lc-app-sidebar">
+                <div class="lc-app-brand">
+                  <div class="lc-app-logo-badge">LC</div>
+                  <div>
+                    <div class="lc-app-brand-title">ルミナケア</div>
+                    <div class="lc-app-brand-sub">LuminaCare</div>
+                  </div>
+                </div>
+
+                <nav class="lc-app-nav">
+                  <a href="#" class="lc-nav-item active" onclick="return false;"><i class="fa-solid fa-users"></i> 利用者管理</a>
+                  <a href="#" class="lc-nav-item" onclick="return false;"><i class="fa-solid fa-chart-line"></i> 売上・実績</a>
+                  <a href="#" class="lc-nav-item" onclick="return false;"><i class="fa-solid fa-sliders"></i> 管理パネル</a>
+                  <a href="#" class="lc-nav-item" onclick="return false;"><i class="fa-solid fa-credit-card"></i> 契約・お支払い</a>
+                </nav>
+
+                <div class="lc-app-sidebar-footer">
+                  <div class="lc-org-badge">
+                    <span class="lc-org-label">現在の事業所</span>
+                    <strong class="lc-org-val">ケアプランまーる</strong>
+                  </div>
+                  <div class="lc-ver-tag">
+                    v3.36.0 (最新修正版)<br>by ケアマネDXラボ
+                  </div>
+                </div>
+              </aside>
+
+              <!-- Main Content Window -->
+              <main class="lc-app-main">
+                <!-- Top Toolbar -->
+                <div class="lc-app-toolbar">
+                  <h3 class="lc-page-title">利用者管理</h3>
+                  
+                  <div class="lc-toolbar-actions">
+                    <div class="lc-search-input-wrap">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input type="text" placeholder="名前・カナ・被保険者番号" class="lc-search-input">
+                    </div>
+
+                    <div class="lc-filter-select-wrap">
+                      <i class="fa-solid fa-user-gear"></i>
+                      <span>担当職員:</span>
+                      <select class="lc-select">
+                        <option>山田太郎</option>
+                        <option>佐藤花子</option>
+                      </select>
+                    </div>
+
+                    <div class="lc-month-picker">
+                      <button class="lc-btn-icon"><i class="fa-solid fa-chevron-left"></i></button>
+                      <span><i class="fa-solid fa-calendar-days"></i> 2026年7月</span>
+                      <button class="lc-btn-icon"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+
+                    <button class="lc-btn lc-btn-outline"><i class="fa-solid fa-pen-to-square"></i> 新規作成</button>
+                    <button class="lc-btn lc-btn-success"><i class="fa-solid fa-folder-open"></i> ファイル選択</button>
+                    <button class="lc-btn lc-btn-csv" id="btnCsvBulkDemo"><i class="fa-solid fa-file-csv"></i> CSV一括</button>
+
+                    <div class="lc-user-profile">
+                      <span>山田太郎</span>
+                      <i class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live Client Table -->
+                <div class="lc-table-scroll-container">
+                  <table class="lc-client-table">
+                    <thead>
+                      <tr>
+                        <th>状態</th>
+                        <th>氏名 / 番号 ▲</th>
+                        <th>介護度</th>
+                        <th>保険者</th>
+                        <th>有効期間 / 契約期間</th>
+                        <th>短期目標</th>
+                        <th>加算</th>
+                        <th>モニタリング</th>
+                        <th>請求</th>
+                        <th>備考</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Row 1 -->
+                      <tr>
+                        <td><span class="lc-badge badge-applying">申請中</span></td>
+                        <td>
+                          <div class="lc-user-name">サトウジロウ</div>
+                          <div class="lc-user-fullname">佐藤二郎 <small class="lc-user-age">(87歳)</small></div>
+                          <div class="lc-user-id">1111111113</div>
+                        </td>
+                        <td>
+                          <select class="lc-table-select select-kaigo5">
+                            <option selected>要介護5</option>
+                            <option>要介護4</option>
+                            <option>要介護3</option>
+                          </select>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                        <td>
+                          <div class="lc-period-box border-green">
+                            <span>2025/12/01</span>
+                            <span class="lc-wave">~</span>
+                            <span>2026/08/14</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-date-cell">
+                            <span>2026/12/31</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-kasan-pill pill-green">
+                            入院時情報連携加算(I)
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-date-input-box box-orange">
+                            <span>年 / 月 / 日</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-billing-group">
+                            <select class="lc-billing-select select-normal">
+                              <option selected>通常請求 ▾</option>
+                              <option>請求対象 ▾</option>
+                            </select>
+                            <button class="lc-btn-month-delay">月遅れ請求</button>
+                          </div>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                      </tr>
+
+                      <!-- Row 2 -->
+                      <tr>
+                        <td><span class="lc-badge badge-expire-this-month">今月迄</span></td>
+                        <td>
+                          <div class="lc-user-name">タナカイチロウ</div>
+                          <div class="lc-user-fullname">田中一郎 <small class="lc-user-age">(82歳)</small></div>
+                          <div class="lc-user-id">1111111112</div>
+                        </td>
+                        <td>
+                          <div class="lc-select-stack">
+                            <select class="lc-table-select select-shien2">
+                              <option selected>要支援2</option>
+                            </select>
+                            <select class="lc-table-select select-shitei">
+                              <option selected>指定</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                        <td>
+                          <div class="lc-period-box border-warning">
+                            <span>2025/07/01</span>
+                            <span class="lc-wave">~</span>
+                            <span class="text-warning-bold">2026/07/31</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-date-cell">
+                            <span>2026/11/30</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="lc-btn-kasan-set">設定する</button>
+                        </td>
+                        <td>
+                          <div class="lc-date-cell text-green">
+                            <span>2026/07/14</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-billing-group">
+                            <select class="lc-billing-select select-normal">
+                              <option selected>通常請求 ▾</option>
+                            </select>
+                            <button class="lc-btn-month-delay">月遅れ請求</button>
+                          </div>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                      </tr>
+
+                      <!-- Row 3 -->
+                      <tr>
+                        <td><span class="lc-badge badge-active">有効</span></td>
+                        <td>
+                          <div class="lc-user-name">マツサブロウ</div>
+                          <div class="lc-user-fullname">松井三郎 <small class="lc-user-age">(82歳)</small></div>
+                          <div class="lc-user-id">1111111114</div>
+                        </td>
+                        <td>
+                          <div class="lc-select-stack">
+                            <select class="lc-table-select select-shien1">
+                              <option selected>要支援1</option>
+                            </select>
+                            <select class="lc-table-select select-entrust">
+                              <option selected>委託</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-insurer-stack">
+                            <select class="lc-insurer-select"><option>取手市 ▾</option></select>
+                            <select class="lc-insurer-select"><option>予防(基本)( ▾</option></select>
+                            <select class="lc-insurer-select"><option>取手西地域包 ▾</option></select>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-period-box border-green">
+                            <span>2026/01/01</span>
+                            <span class="lc-wave">~</span>
+                            <span>2027/01/31</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-date-cell">
+                            <span>2026/10/31</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <button class="lc-btn-kasan-set">設定する</button>
+                        </td>
+                        <td>
+                          <div class="lc-date-input-box box-orange">
+                            <span>年 / 月 / 日</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-billing-group">
+                            <select class="lc-billing-select select-target">
+                              <option selected>請求対 ▾</option>
+                            </select>
+                            <button class="lc-btn-month-delay">月遅れ請求</button>
+                          </div>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                      </tr>
+
+                      <!-- Row 4 -->
+                      <tr>
+                        <td><span class="lc-badge badge-active">有効</span></td>
+                        <td>
+                          <div class="lc-user-name">ヤマダハナコ</div>
+                          <div class="lc-user-fullname">山田花子 <small class="lc-user-age">(77歳)</small></div>
+                          <div class="lc-user-id">1111111111</div>
+                        </td>
+                        <td>
+                          <select class="lc-table-select select-kaigo1">
+                            <option selected>要介護1</option>
+                          </select>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                        <td>
+                          <div class="lc-period-box border-green">
+                            <span>2026/01/01</span>
+                            <span class="lc-wave">~</span>
+                            <span>2026/09/30</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-date-cell text-red-bold">
+                            <span>2026/07/31</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-kasan-pill pill-green">
+                            初回加算
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-date-input-box box-orange">
+                            <span>年 / 月 / 日</span>
+                            <i class="fa-solid fa-calendar"></i>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="lc-billing-group">
+                            <select class="lc-billing-select select-delay">
+                              <option selected>月遅れ ▾</option>
+                            </select>
+                            <button class="lc-btn-month-delay">月遅れ請求</button>
+                          </div>
+                        </td>
+                        <td><span class="lc-muted">-</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Footer scrollbar visual indicator -->
+                <div class="lc-scroll-bar-indicator">
+                  <div class="lc-scroll-thumb"></div>
+                </div>
+              </main>
+            </div>
+          </div>
+
           <!-- Panel 1: AI OCR -->
-          <div id="panel-ocr" class="lumina-panel active">
+          <div id="panel-ocr" class="lumina-panel">
             <div class="ocr-layout-grid">
               <div class="ocr-upload-card">
                 <h4 style="color: #f8fafc; font-size: 1rem;"><i class="fa-solid fa-cloud-arrow-up text-primary"></i> 保険証・決定通知書をアップロード</h4>

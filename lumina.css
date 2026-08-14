@@ -796,3 +796,549 @@
   color: #34d399;
   line-height: 1.6;
 }
+
+/* ==========================================================================
+   Panel 0: LuminaCare v3.36.0 Real System UI (Client Management Table)
+   ========================================================================== */
+.lc-app-container {
+  display: flex;
+  background: #f8fafc;
+  color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 600px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Left Sidebar */
+.lc-app-sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
+  flex-shrink: 0;
+}
+
+.lc-app-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.25rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lc-app-logo-badge {
+  width: 36px;
+  height: 36px;
+  background: #10b981;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lc-app-brand-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.lc-app-brand-sub {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.lc-app-nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.lc-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.lc-nav-item:hover, .lc-nav-item.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.lc-nav-item.active {
+  border-left-color: #10b981;
+  color: #10b981;
+  background: #0f172a;
+}
+
+.lc-app-sidebar-footer {
+  padding: 1rem 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lc-org-badge {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.lc-org-label {
+  display: block;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.lc-org-val {
+  display: block;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.lc-ver-tag {
+  font-size: 0.7rem;
+  color: #10b981;
+  line-height: 1.4;
+}
+
+/* Main Area */
+.lc-app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Top Toolbar */
+.lc-app-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.lc-page-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.lc-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.lc-search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lc-search-input-wrap i {
+  position: absolute;
+  left: 0.75rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.lc-search-input {
+  padding: 0.4rem 0.75rem 0.4rem 2.2rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  width: 200px;
+  background: #f8fafc;
+}
+
+.lc-filter-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.lc-select {
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  outline: none;
+}
+
+.lc-month-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #cbd5e1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  background: #ffffff;
+}
+
+.lc-btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 0.1rem 0.3rem;
+}
+
+.lc-btn {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.lc-btn-outline {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.lc-btn-success {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.lc-btn-csv {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.lc-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-left: 0.5rem;
+}
+
+/* Scrollable Table Area */
+.lc-table-scroll-container {
+  overflow-x: auto;
+  flex: 1;
+}
+
+.lc-client-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.lc-client-table th {
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 0.75rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.lc-client-table td {
+  padding: 0.75rem 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+/* User Info Styling */
+.lc-user-name {
+  font-size: 0.65rem;
+  color: #94a3b8;
+}
+
+.lc-user-fullname {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.lc-user-age {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: #64748b;
+}
+
+.lc-user-id {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+/* Badges */
+.lc-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: inline-block;
+  text-align: center;
+}
+
+.badge-applying {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.badge-expire-this-month {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.badge-active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Select Control Stack */
+.lc-select-stack, .lc-insurer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lc-table-select {
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #f0fdf4;
+  color: #166534;
+  cursor: pointer;
+}
+
+.lc-table-select.select-kaigo5 {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.lc-table-select.select-shien2, .lc-table-select.select-shien1 {
+  border-color: #86efac;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.lc-table-select.select-shitei, .lc-table-select.select-entrust {
+  border-color: #fde68a;
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.lc-insurer-select {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  background: #ffffff;
+  color: #334155;
+}
+
+/* Period Boxes */
+.lc-period-box {
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: monospace;
+}
+
+.lc-period-box.border-green {
+  border: 1px solid #86efac;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.lc-period-box.border-warning {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.lc-wave {
+  color: #94a3b8;
+}
+
+.text-warning-bold {
+  color: #d97706;
+  font-weight: 800;
+}
+
+/* Date cells */
+.lc-date-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.lc-date-cell.text-red-bold {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.lc-date-cell.text-green {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.lc-date-input-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.lc-date-input-box.box-orange {
+  border: 1px solid #fdba74;
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+/* Kasan Pill & Button */
+.lc-kasan-pill {
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.pill-green {
+  border: 1px solid #86efac;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.lc-btn-kasan-set {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #64748b;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+/* Billing & Delays */
+.lc-billing-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lc-billing-select {
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lc-billing-select.select-normal {
+  border: 1px solid #86efac;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.lc-billing-select.select-target {
+  border: 1px solid #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.lc-billing-select.select-delay {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.lc-btn-month-delay {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lc-btn-month-delay:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.lc-muted {
+  color: #cbd5e1;
+}
+
+.lc-scroll-bar-indicator {
+  height: 12px;
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.lc-scroll-thumb {
+  position: absolute;
+  left: 20%;
+  width: 40%;
+  height: 8px;
+  top: 2px;
+  background: #cbd5e1;
+  border-radius: 4px;
+}

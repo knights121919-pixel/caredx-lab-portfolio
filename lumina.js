@@ -417,4 +417,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // 9. Panel 0: Real UI (v3.36.0) Interactive Handlers
+  // ==========================================
+  const btnCsvBulkDemo = document.getElementById('btnCsvBulkDemo');
+  const monthDelayBtns = document.querySelectorAll('.lc-btn-month-delay');
+  const kasanSetBtns = document.querySelectorAll('.lc-btn-kasan-set');
+
+  if (btnCsvBulkDemo) {
+    btnCsvBulkDemo.addEventListener('click', () => {
+      const origText = btnCsvBulkDemo.innerHTML;
+      btnCsvBulkDemo.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> CSV照合中...';
+      btnCsvBulkDemo.style.opacity = '0.8';
+
+      setTimeout(() => {
+        btnCsvBulkDemo.innerHTML = '<i class="fa-solid fa-circle-check"></i> CSV照合完了!';
+        btnCsvBulkDemo.style.background = '#10b981';
+        btnCsvBulkDemo.style.opacity = '1';
+
+        setTimeout(() => {
+          btnCsvBulkDemo.innerHTML = origText;
+          btnCsvBulkDemo.style.background = '#0f172a';
+        }, 2500);
+      }, 1200);
+    });
+  }
+
+  monthDelayBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tr = btn.closest('tr');
+      const name = tr ? tr.querySelector('.lc-user-fullname').innerText.split(' ')[0] : '対象者';
+      
+      if (btn.classList.contains('active-delay')) {
+        btn.classList.remove('active-delay');
+        btn.innerText = '月遅れ請求';
+        btn.style.background = '#f8fafc';
+        btn.style.color = '#334155';
+        alert(`【月遅れ解除】${name}様の請求ステータスを「通常請求」に戻しました。`);
+      } else {
+        btn.classList.add('active-delay');
+        btn.innerText = '月遅れ処理済';
+        btn.style.background = '#f59e0b';
+        btn.style.color = '#ffffff';
+        alert(`【月遅れ登録】${name}様を「月遅れ請求対象」に登録しました。翌月請求データへ自動繰り越されます。`);
+      }
+    });
+  });
+
+  kasanSetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tr = btn.closest('tr');
+      const name = tr ? tr.querySelector('.lc-user-fullname').innerText.split(' ')[0] : '対象者';
+      const kasanChoice = prompt(`【加算設定】${name}様に設定する加算を選択・入力してください:`, '初回加算, 入院時情報連携加算(II)');
+      if (kasanChoice) {
+        const td = btn.parentElement;
+        td.innerHTML = `<div class="lc-kasan-pill pill-green">${kasanChoice}</div>`;
+      }
+    });
+  });
+
 });
+
