@@ -32,8 +32,8 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#caredoc-ai"><i class="fa-solid fa-wand-magic-sparkles text-success"></i> CareDoc AI 実機UI</a>
         <a href="#lumina-care"><i class="fa-solid fa-sparkles text-primary"></i> LuminaCare 実機UI・デモ</a>
+        <a href="#caredoc-ai"><i class="fa-solid fa-wand-magic-sparkles text-success"></i> CareDoc AI 実機UI</a>
         <a href="#profile">代表プロフィール</a>
         <a href="#contact" class="btn btn-primary btn-sm">無料相談・デモ依頼</a>
         <a href="meishi.html" class="btn btn-ghost btn-sm" title="名刺作成ツールを開く"><i class="fa-solid fa-id-card"></i> 名刺ツール</a>
@@ -67,94 +67,6 @@
 
 
 
-    </div>
-  </section>
-
-  <!-- CareDoc AI Feature Showcase Section -->
-  <section id="caredoc-ai" class="section-padding bg-dark border-top-panel" style="background: #091322;">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="badge-lumina" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);"><i class="fa-solid fa-wand-magic-sparkles"></i> AI自動仕分け & 整合性チェッカー</span>
-        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #ffffff;">CareDoc AI <small style="font-size: 1.2rem; color: #34d399;">（ケアドック AI）</small></h2>
-        <p style="max-width: 800px; margin: 0.5rem auto 0; color: #94a3b8; font-size: 1rem; line-height: 1.7;">
-          「CareDoc AI」は、介護現場で毎日発生する多種多様な紙書類・PDFファイルを、最新のAIマルチモーダル解析（画像OCR）技術で**自動判定・リネーム・カテゴリ仕分け保管**する先進アプリケーションです。
-        </p>
-      </div>
-
-      <!-- CareDoc AI Tabbed Showcase -->
-      <div class="lumina-app-simulator" style="border-color: rgba(52, 211, 153, 0.3);">
-        <div class="lumina-sim-header" style="background: rgba(16, 185, 129, 0.1);">
-          <div class="lumina-sim-brand">
-            <div class="lumina-sim-logo" style="background: #10b981; color: #ffffff; font-weight: 800;">C</div>
-            <div>
-              <div class="lumina-sim-title">CareDoc AI 介護書類自動仕分けシステム</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation Tabs -->
-        <div class="lumina-sim-tabs" style="border-bottom-color: rgba(52, 211, 153, 0.2);">
-          <button class="caredoc-tab-btn active" data-tab="caredoc-auto"><i class="fa-solid fa-wand-magic-sparkles"></i> 自動仕分け画面 (実機UI)</button>
-          <button class="caredoc-tab-btn" data-tab="caredoc-dash"><i class="fa-solid fa-folder-tree"></i> ダッシュボード (実機UI)</button>
-          <button class="caredoc-tab-btn" data-tab="caredoc-karte"><i class="fa-solid fa-box-archive"></i> 利用者カルテ (実機UI)</button>
-        </div>
-
-        <!-- Simulator Content Panels -->
-        <div class="lumina-sim-content">
-          <!-- Panel 1: Auto Classify -->
-          <div id="panel-caredoc-auto" class="caredoc-panel active">
-            <div class="lumina-real-screenshot-container">
-              <div class="screenshot-img-wrapper">
-                <img src="caredoc_auto_classify.png" alt="CareDoc AI 自動仕分け画面" class="lumina-real-img" style="width: 100%; display: block;">
-              </div>
-              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 自動仕分け機能 の主要解説</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
-                    <div style="color: #34d399; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-upload" style="margin-right: 0.4rem;"></i>一括ドラッグ＆ドロップ</div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">スキャンしたPDFを投入するだけで自動読み込み。ファイル名の変更やフォルダ振分けが自動で完了します。</p>
-                  </div>
-                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
-                    <div style="color: #38bdf8; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-brain" style="margin-right: 0.4rem;"></i>AI画像OCR（マルチモーダル）解析</div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">文字情報だけでなく全体のフォーマットを解析。氏名・書類種別（介護保険証等）を高精度で自動識別します。</p>
-                  </div>
-                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
-                    <div style="color: #fbbf24; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-terminal" style="margin-right: 0.4rem;"></i>プロセスログリアルタイム監視</div>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">仕分け結果や実行プロセスを画面下部ログで透明に表示。手動補正ボタンも完備しています。</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 2: Dashboard -->
-          <div id="panel-caredoc-dash" class="caredoc-panel" style="display: none;">
-            <div class="lumina-real-screenshot-container">
-              <div class="screenshot-img-wrapper">
-                <img src="caredoc_dashboard.png" alt="CareDoc AI ダッシュボード画面" class="lumina-real-img" style="width: 100%; display: block;">
-              </div>
-              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> ダッシュボード（利用者カルテ一覧）</h4>
-                <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">利用者を五十音順（あ行・か行…）に直感整理。登録人数表示、キーワード検索、アーカイブ機能を搭載し、迷わず目的のカルテへアクセスできます。</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 3: User Karte -->
-          <div id="panel-caredoc-karte" class="caredoc-panel" style="display: none;">
-            <div class="lumina-real-screenshot-container">
-              <div class="screenshot-img-wrapper">
-                <img src="caredoc_karte.png" alt="CareDoc AI 利用者カルテ画面" class="lumina-real-img" style="width: 100%; display: block;">
-              </div>
-              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
-                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 利用者カルテ（カテゴリ別保管書類）</h4>
-                <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">①基本情報 / ②介護保険情報 / ③ケアマネジメント / ④サービス利用票 / ⑤医療情報 / ⑥事業所書類 / ⑦その他 にフォルダ分類保管。ワンクリックで即座に書類閲覧が可能です。</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
     </div>
   </section>
 
@@ -298,8 +210,93 @@
     </div>
   </section>
 
+  <!-- CareDoc AI Feature Showcase Section -->
+  <section id="caredoc-ai" class="section-padding bg-dark border-top-panel" style="background: #091322;">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-lumina" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);"><i class="fa-solid fa-wand-magic-sparkles"></i> AI自動仕分け & 整合性チェッカー</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #ffffff;">CareDoc AI <small style="font-size: 1.2rem; color: #34d399;">（ケアドック AI）</small></h2>
+        <p style="max-width: 800px; margin: 0.5rem auto 0; color: #94a3b8; font-size: 1rem; line-height: 1.7;">
+          「CareDoc AI」は、介護現場で毎日発生する多種多様な紙書類・PDFファイルを、最新のAIマルチモーダル解析（画像OCR）技術で**自動判定・リネーム・カテゴリ仕分け保管**する先進アプリケーションです。
+        </p>
+      </div>
 
+      <!-- CareDoc AI Tabbed Showcase -->
+      <div class="lumina-app-simulator" style="border-color: rgba(52, 211, 153, 0.3);">
+        <div class="lumina-sim-header" style="background: rgba(16, 185, 129, 0.1);">
+          <div class="lumina-sim-brand">
+            <div class="lumina-sim-logo" style="background: #10b981; color: #ffffff; font-weight: 800;">C</div>
+            <div>
+              <div class="lumina-sim-title">CareDoc AI 介護書類自動仕分けシステム</div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Navigation Tabs -->
+        <div class="lumina-sim-tabs" style="border-bottom-color: rgba(52, 211, 153, 0.2);">
+          <button class="caredoc-tab-btn active" data-tab="caredoc-auto"><i class="fa-solid fa-wand-magic-sparkles"></i> 自動仕分け画面 (実機UI)</button>
+          <button class="caredoc-tab-btn" data-tab="caredoc-dash"><i class="fa-solid fa-folder-tree"></i> ダッシュボード (実機UI)</button>
+          <button class="caredoc-tab-btn" data-tab="caredoc-karte"><i class="fa-solid fa-box-archive"></i> 利用者カルテ (実機UI)</button>
+        </div>
+
+        <!-- Simulator Content Panels -->
+        <div class="lumina-sim-content">
+          <!-- Panel 1: Auto Classify -->
+          <div id="panel-caredoc-auto" class="caredoc-panel active">
+            <div class="lumina-real-screenshot-container">
+              <div class="screenshot-img-wrapper">
+                <img src="caredoc_auto_classify.png" alt="CareDoc AI 自動仕分け画面" class="lumina-real-img" style="width: 100%; display: block;">
+              </div>
+              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 自動仕分け機能 の主要解説</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #34d399; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-upload" style="margin-right: 0.4rem;"></i>一括ドラッグ＆ドロップ</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">スキャンしたPDFを投入するだけで自動読み込み。ファイル名の変更やフォルダ振分けが自動で完了します。</p>
+                  </div>
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #38bdf8; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-brain" style="margin-right: 0.4rem;"></i>AI画像OCR（マルチモーダル）解析</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">文字情報だけでなく全体のフォーマットを解析。氏名・書類種別（介護保険証等）を高精度で自動識別します。</p>
+                  </div>
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #fbbf24; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-terminal" style="margin-right: 0.4rem;"></i>プロセスログリアルタイム監視</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">仕分け結果や実行プロセスを画面下部ログで透明に表示。手動補正ボタンも完備しています。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Dashboard -->
+          <div id="panel-caredoc-dash" class="caredoc-panel" style="display: none;">
+            <div class="lumina-real-screenshot-container">
+              <div class="screenshot-img-wrapper">
+                <img src="caredoc_dashboard.png" alt="CareDoc AI ダッシュボード画面" class="lumina-real-img" style="width: 100%; display: block;">
+              </div>
+              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> ダッシュボード（利用者カルテ一覧）</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">利用者を五十音順（あ行・か行…）に直感整理。登録人数表示、キーワード検索、アーカイブ機能を搭載し、迷わず目的のカルテへアクセスできます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: User Karte -->
+          <div id="panel-caredoc-karte" class="caredoc-panel" style="display: none;">
+            <div class="lumina-real-screenshot-container">
+              <div class="screenshot-img-wrapper">
+                <img src="caredoc_karte.png" alt="CareDoc AI 利用者カルテ画面" class="lumina-real-img" style="width: 100%; display: block;">
+              </div>
+              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 利用者カルテ（カテゴリ別保管書類）</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">①基本情報 / ②介護保険情報 / ③ケアマネジメント / ④サービス利用票 / ⑤医療情報 / ⑥事業所書類 / ⑦その他 にフォルダ分類保管。ワンクリックで即座に書類閲覧が可能です。</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <!-- Representative Profile & Vision Section -->
