@@ -279,6 +279,33 @@
   background: rgba(2, 132, 199, 0.1);
 }
 
+.caredoc-tab-btn {
+  padding: 0.9rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.caredoc-tab-btn:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.caredoc-tab-btn.active {
+  color: #34d399;
+  border-bottom-color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+}
+
 /* Tab Panels Content */
 .lumina-sim-content {
   padding: 1.75rem;
