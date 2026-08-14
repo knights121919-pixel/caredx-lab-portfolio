@@ -217,7 +217,7 @@
         <span class="badge-lumina" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);"><i class="fa-solid fa-wand-magic-sparkles"></i> AI自動仕分け & 整合性チェッカー</span>
         <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #ffffff;">CareDoc AI <small style="font-size: 1.2rem; color: #34d399;">（ケアドック AI）</small></h2>
         <p style="max-width: 800px; margin: 0.5rem auto 0; color: #94a3b8; font-size: 1rem; line-height: 1.7;">
-          「CareDoc AI」は、介護現場で毎日発生する多種多様な紙書類・PDFファイルを、最新のAIマルチモーダル解析（画像OCR）技術で**自動判定・リネーム・カテゴリ仕分け保管**する先進アプリケーションです。
+          「CareDoc AI」は、介護現場で毎日発生する書類の自動判別・保管に加え、**アセスメントシート・ケアプラン・担当者会議録（3点セット）の揃い状況**や**日付の時系列整合性**をAIが自動判定する次世代管理システムです。
         </p>
       </div>
 
@@ -227,7 +227,7 @@
           <div class="lumina-sim-brand">
             <div class="lumina-sim-logo" style="background: #10b981; color: #ffffff; font-weight: 800;">C</div>
             <div>
-              <div class="lumina-sim-title">CareDoc AI 介護書類自動仕分けシステム</div>
+              <div class="lumina-sim-title">CareDoc AI 介護書類自動仕分け＆整合性チェックシステム</div>
             </div>
           </div>
         </div>
@@ -237,6 +237,8 @@
           <button class="caredoc-tab-btn active" data-tab="caredoc-auto"><i class="fa-solid fa-wand-magic-sparkles"></i> 自動仕分け画面 (実機UI)</button>
           <button class="caredoc-tab-btn" data-tab="caredoc-dash"><i class="fa-solid fa-folder-tree"></i> ダッシュボード (実機UI)</button>
           <button class="caredoc-tab-btn" data-tab="caredoc-karte"><i class="fa-solid fa-box-archive"></i> 利用者カルテ (実機UI)</button>
+          <button class="caredoc-tab-btn" data-tab="caredoc-3set"><i class="fa-solid fa-file-circle-check"></i> 3点セット揃いチェック (実機UI)</button>
+          <button class="caredoc-tab-btn" data-tab="caredoc-date"><i class="fa-solid fa-clock-rotate-left"></i> 日付整合性判定 (実機UI)</button>
         </div>
 
         <!-- Simulator Content Panels -->
@@ -289,6 +291,41 @@
               <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
                 <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 利用者カルテ（カテゴリ別保管書類）</h4>
                 <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">①基本情報 / ②介護保険情報 / ③ケアマネジメント / ④サービス利用票 / ⑤医療情報 / ⑥事業所書類 / ⑦その他 にフォルダ分類保管。ワンクリックで即座に書類閲覧が可能です。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 4: 3-Set Check -->
+          <div id="panel-caredoc-3set" class="caredoc-panel" style="display: none;">
+            <div class="lumina-real-screenshot-container">
+              <div class="screenshot-img-wrapper">
+                <img src="caredoc_3set_check.png" alt="CareDoc AI 3点セット揃いチェック画面" class="lumina-real-img" style="width: 100%; display: block;">
+              </div>
+              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 3点セット（アセスメント・ケアプラン・担当者会議録）揃い状況チェック</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">各期ごとに「アセスメントシート」「ケアプラン」「サービス担当者会議の要点」の必携3点セットが正しく格納されているかを自動判定。「✓ 3点セット揃っています」「⚠️ 3点セット未完了」を視覚的バッジで一目瞭然に表示します。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 5: Date Consistency Check -->
+          <div id="panel-caredoc-date" class="caredoc-panel" style="display: none;">
+            <div class="lumina-real-screenshot-container">
+              <div class="screenshot-img-wrapper">
+                <img src="caredoc_date_check.png" alt="CareDoc AI 日付の時系列チェック結果画面" class="lumina-real-img" style="width: 100%; display: block;">
+              </div>
+              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(52, 211, 153, 0.3); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-circle-info text-success"></i> 日付の時系列整合性判定 & 運営指導（特例事由）対策</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #34d399; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-clock" style="margin-right: 0.4rem;"></i>時系列整合性の自動判定（適合 / 違反）</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">①アセスメント日 ➔ ②原案作成日 ➔ ③会議開催日 ➔ ④計画作成日 ➔ ⑤同意日 ➔ ⑥サービス開始日 の日付順序が適正かAIが自動判定します。</p>
+                  </div>
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #fbbf24; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 0.4rem;"></i>やむを得ない特例事由 & 指導基準定型文</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">急な退院や保護等で日付が前後した場合も、正当な理由・定型文テンプレートをワンクリック適用し、運営指導対策（是正除外判定）を完了できます。</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
