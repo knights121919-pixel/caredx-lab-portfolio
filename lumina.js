@@ -476,5 +476,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ==========================================
+  // CareDoc AI Tab Navigation Logic
+  // ==========================================
+  const caredocTabBtns = document.querySelectorAll('.caredoc-tab-btn');
+  const caredocPanels = document.querySelectorAll('.caredoc-panel');
+
+  caredocTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.tab;
+      caredocTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      caredocPanels.forEach(p => {
+        if (p.id === `panel-${targetId}`) {
+          p.style.display = 'block';
+          p.classList.add('active');
+        } else {
+          p.style.display = 'none';
+          p.classList.remove('active');
+        }
+      });
+    });
+  });
+
 });
 
