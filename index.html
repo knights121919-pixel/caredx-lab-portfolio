@@ -16,6 +16,7 @@
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="lumina.css">
 </head>
 <body>
 
@@ -31,9 +32,10 @@
       </a>
 
       <nav class="nav-links">
+        <a href="#lumina-care"><i class="fa-solid fa-sparkles text-primary"></i> LuminaCare 特徴・デモ</a>
         <a href="#live-apps"><i class="fa-solid fa-rocket text-warning"></i> 開発実績アプリ</a>
         <a href="#features">取扱プロダクト</a>
-        <a href="#demo">アプリ疑似体験</a>
+        <a href="#demo">自動仕分けデモ</a>
         <a href="#comparison">導入メリット</a>
         <a href="#profile">代表プロフィール</a>
         <a href="#contact" class="btn btn-primary btn-sm">無料相談・デモ依頼</a>
@@ -145,6 +147,573 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- LuminaCare Core System & 7 Features Showcase Section -->
+  <section id="lumina-care" class="section-padding bg-dark border-top-panel">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge-lumina"><i class="fa-solid fa-star"></i> 総合支援システム</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #ffffff;">LuminaCare <small style="font-size: 1.2rem; color: #38bdf8;">（ルミナケア）</small></h2>
+        <p style="max-width: 800px; margin: 0.5rem auto 0; color: #94a3b8; font-size: 1rem; line-height: 1.7;">
+          「LuminaCare（ルミナケア）」は、介護事業所における利用者の介護保険認定期間の管理、各種加算・請求管理、実績照合を効率化・自動化する総合支援システムです。
+        </p>
+      </div>
+
+      <!-- 7 Key Features Grid -->
+      <div class="lumina-features-grid">
+        
+        <!-- Feature 1: AI OCR -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 01</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-ocr"><i class="fa-solid fa-robot"></i></div>
+            <h3 class="lumina-card-title">1. 🤖 AI OCRによる保険証・書類の自動読み取り</h3>
+          </div>
+          <p class="lumina-card-desc">介護保険証や認定決定通知書などの画像（JPEG/PNG）やPDFをアップロードするだけで、氏名、フリガナ、被保険者番号、介護度、認定有効期間などをAIが自動解析・抽出します。手入力の負担や誤入力を大幅に削減できます。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 画像・PDFドラッグ＆ドロップ対応</li>
+            <li><i class="fa-solid fa-check"></i> 被保険者番号・有効期間の自動認識</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="ocr"><i class="fa-solid fa-circle-play"></i> OCR解析デモを試す</button>
+        </div>
+
+        <!-- Feature 2: Certificate & Contract Alert -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 02</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-alert"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3 class="lumina-card-title">2. 📅 認定期間・契約期間のビジュアル管理とアラート</h3>
+          </div>
+          <p class="lumina-card-desc">利用者ごとに「認定有効期間」および「契約期間」を一覧表示。期限切れや更新時期が近づいている利用者を警告バッジやカラーハイライトで視覚的にお知らせし、受給資格切れや請求漏れ・過誤請求を未然に防止します。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 期限切れ・要更新のカラーアラート表示</li>
+            <li><i class="fa-solid fa-check"></i> 一括更新通知案内メール機能</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="alert"><i class="fa-solid fa-circle-play"></i> 認定期限アラートを試す</button>
+        </div>
+
+        <!-- Feature 3: Additions & Delays -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 03</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-kasan"><i class="fa-solid fa-calculator"></i></div>
+            <h3 class="lumina-card-title">3. 📊 加算・請求・月遅れ管理</h3>
+          </div>
+          <p class="lumina-card-desc">月ごとに居宅・予防・総合事業などの各種体制加算・個別サービス加算をチェックボックス感覚で簡単に切り替え・保存可能。返戻や月遅れが発生した請求について、ステータス（未対応/準備中/提出済/完了）やメモを記録し対応状況をひと目で追跡できます。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 体制・個別加算のワンタップ切替</li>
+            <li><i class="fa-solid fa-check"></i> 返戻・月遅れステトラッキング</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="kasan"><i class="fa-solid fa-circle-play"></i> 加算・返戻管理を試す</button>
+        </div>
+
+        <!-- Feature 4: CSV Matching Engine -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 04</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-csv"><i class="fa-solid fa-file-csv"></i></div>
+            <h3 class="lumina-card-title">4. 🔍 CSV実績照合（請求・実績データの自動付け合わせ）</h3>
+          </div>
+          <p class="lumina-card-desc">他システムや国保連請求データなどのCSVを取り込み、登録済みの利用者データ・単位数と自動照合。不一致やズレ（単位数の違い、番号の誤りなど）を自動で検知・ハイライト表示するため、月次請求前のチェック作業が飛躍的にスムーズになります。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 国保連データとの自動差異検知</li>
+            <li><i class="fa-solid fa-check"></i> 不一致箇所の自動ハイライト＆一括修正</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="csv"><i class="fa-solid fa-circle-play"></i> CSV照合エンジンを試す</button>
+        </div>
+
+        <!-- Feature 5: Staff Stats Dashboard -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 05</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-stats"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3 class="lumina-card-title">5. 📈 職員別実績管理 & 統計ダッシュボード</h3>
+          </div>
+          <p class="lumina-card-desc">事業所全体の売上実績や加算取得状況のシミュレーション・分析が可能。職員ごとの担当利用者数や実績管理、業務の自己点検チェックリスト機能なども備え、管理者業務をトータルでサポートします。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 売上＆加算シミュレーション分析</li>
+            <li><i class="fa-solid fa-check"></i> 職員別担当実績 & 業務自己点検</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="stats"><i class="fa-solid fa-circle-play"></i> 統計ダッシュボードを試す</button>
+        </div>
+
+        <!-- Feature 6: Multi-Device Mobile Responsive -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 06</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-mobile"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3 class="lumina-card-title">6. 📱 PC・スマホ・タブレット完全対応（マルチデバイス）</h3>
+          </div>
+          <p class="lumina-card-desc">デスクでのPC大画面操作（テーブル一覧表示）から、訪問先や現場でのスマートフォン・タブレット操作（タッチ最適化UI / ボトムナビゲーション）まで柔軟に対応します。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> PCテーブル＆スマホボトムナビ両対応</li>
+            <li><i class="fa-solid fa-check"></i> 訪問先でも快適なタッチUI</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="mobile"><i class="fa-solid fa-circle-play"></i> モバイルUI表示を試す</button>
+        </div>
+
+        <!-- Feature 7: Multi-Tenant Security & RLS -->
+        <div class="lumina-feature-card">
+          <span class="lumina-card-num">Feature 07</span>
+          <div class="lumina-card-header">
+            <div class="lumina-icon-box icon-security"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="lumina-card-title">7. 🔒 厳格なセキュリティとマルチテナント対応</h3>
+          </div>
+          <p class="lumina-card-desc">事業所（組織）ごとのデータ独立（マルチテナント境界保護）やSupabaseによる行レベルセキュリティ（RLS）を実装しており、個人情報や業務データを安全に管理できます。</p>
+          <ul class="lumina-card-bullets">
+            <li><i class="fa-solid fa-check"></i> 事業所（組織）ごとの完全データ分離</li>
+            <li><i class="fa-solid fa-check"></i> Supabase RLSによる行レベル保護</li>
+          </ul>
+          <button class="lumina-btn-demo-trigger" data-target-tab="security"><i class="fa-solid fa-circle-play"></i> セキュリティ切替を試す</button>
+        </div>
+
+      </div>
+
+      <!-- Interactive System Simulator Container -->
+      <div id="lumina-app-simulator" class="lumina-app-simulator">
+        <!-- Simulator Navigation Header -->
+        <div class="lumina-sim-header">
+          <div class="lumina-sim-brand">
+            <div class="lumina-sim-logo">L</div>
+            <div>
+              <div class="lumina-sim-title">LuminaCare 総合支援システム <small style="color: #38bdf8; font-weight: normal;">(LIVE SYSTEM DEMO)</small></div>
+              <span style="font-size: 0.75rem; color: #94a3b8;">選択中事業所: <strong id="currentOrgName" style="color: #38bdf8;">ひまわり介護サービス（東京本社）</strong></span>
+            </div>
+          </div>
+
+          <div class="tenant-selector-box">
+            <i class="fa-solid fa-building text-primary"></i>
+            <span>事業所切替:</span>
+            <select id="tenantSelect" class="tenant-select">
+              <option value="himawari">ひまわり介護サービス（東京本社）</option>
+              <option value="sakura">さくら訪問介護ステーション（横浜）</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="lumina-sim-tabs">
+          <button class="lumina-tab-btn active" data-tab="ocr"><i class="fa-solid fa-robot"></i> AI OCR解析</button>
+          <button class="lumina-tab-btn" data-tab="alert"><i class="fa-solid fa-calendar-check"></i> 認定期限・アラート</button>
+          <button class="lumina-tab-btn" data-tab="kasan"><i class="fa-solid fa-calculator"></i> 加算・返戻管理</button>
+          <button class="lumina-tab-btn" data-tab="csv"><i class="fa-solid fa-file-csv"></i> CSV実績照合</button>
+          <button class="lumina-tab-btn" data-tab="stats"><i class="fa-solid fa-chart-pie"></i> 職員別統計</button>
+          <button class="lumina-tab-btn" data-tab="mobile"><i class="fa-solid fa-mobile-screen"></i> モバイルUI</button>
+          <button class="lumina-tab-btn" data-tab="security"><i class="fa-solid fa-shield-halved"></i> RLSセキュリティ</button>
+        </div>
+
+        <!-- Simulator Content Panels -->
+        <div class="lumina-sim-content">
+
+          <!-- Panel 1: AI OCR -->
+          <div id="panel-ocr" class="lumina-panel active">
+            <div class="ocr-layout-grid">
+              <div class="ocr-upload-card">
+                <h4 style="color: #f8fafc; font-size: 1rem;"><i class="fa-solid fa-cloud-arrow-up text-primary"></i> 保険証・決定通知書をアップロード</h4>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem;">JPEG / PNG / PDF ファイルをドラッグ＆ドロップ</p>
+                
+                <div class="ocr-sample-btns">
+                  <button class="btn-sample active" data-sample="sampleA"><i class="fa-solid fa-id-card"></i> サンプルA: 山田様 保険証</button>
+                  <button class="btn-sample" data-sample="sampleB"><i class="fa-solid fa-file-signature"></i> サンプルB: 佐藤様 決定通知書</button>
+                </div>
+
+                <div class="ocr-preview-box">
+                  <div id="scanBeam" class="scan-beam"></div>
+                  <div id="ocrPreviewContent">
+                    <i class="fa-solid fa-file-invoice text-primary" style="font-size: 3rem; margin-bottom: 0.5rem;"></i>
+                    <h5 style="color: #f8fafc; margin-bottom: 0.2rem;">介護保険証（様式第1号）</h5>
+                    <span style="color: #94a3b8; font-size: 0.8rem;">被保険者: 山田 和子 様 (PDF/Image)</span>
+                  </div>
+                </div>
+
+                <button id="btnRunOCR" class="btn btn-primary btn-block" style="margin-top: 1rem;">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> AI OCRで書類を解析・自動入力
+                </button>
+              </div>
+
+              <div class="ocr-form-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+                  <h4 style="color: #f8fafc; font-size: 1rem;"><i class="fa-solid fa-file-circle-check text-success"></i> AI自動抽出一覧</h4>
+                  <span id="ocrConfidenceBadge" class="status-badge badge-success" style="display: none;"><i class="fa-solid fa-shield-check"></i> 解析精度 99.4%</span>
+                </div>
+
+                <div class="ocr-field-group">
+                  <div class="ocr-field">
+                    <label>氏名</label>
+                    <input type="text" id="ocrName" readonly placeholder="AI解析待ち...">
+                  </div>
+                  <div class="ocr-field">
+                    <label>フリガナ</label>
+                    <input type="text" id="ocrKana" readonly placeholder="AI解析待ち...">
+                  </div>
+                  <div class="ocr-field">
+                    <label>被保険者番号</label>
+                    <input type="text" id="ocrNum" readonly placeholder="AI解析待ち...">
+                  </div>
+                  <div class="ocr-field">
+                    <label>要介護区分</label>
+                    <input type="text" id="ocrLevel" readonly placeholder="AI解析待ち...">
+                  </div>
+                  <div class="ocr-field">
+                    <label>認定開始日</label>
+                    <input type="date" id="ocrStart">
+                  </div>
+                  <div class="ocr-field">
+                    <label>認定終了日</label>
+                    <input type="date" id="ocrEnd">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Alert Board -->
+          <div id="panel-alert" class="lumina-panel">
+            <div class="alert-filter-bar">
+              <div class="filter-btn-group">
+                <button class="btn-filter btn-filter-alert active" data-filter="all">全員 (5名)</button>
+                <button class="btn-filter btn-filter-alert" data-filter="expired">🔴 期限切れ (1名)</button>
+                <button class="btn-filter btn-filter-alert" data-filter="warning">🟡 更新間近 (2名)</button>
+                <button class="btn-filter btn-filter-alert" data-filter="success">🟢 正常 (2名)</button>
+              </div>
+              <button id="btnSendAlertBatch" class="btn btn-primary btn-sm"><i class="fa-solid fa-paper-plane"></i> 要更新・期限切れ利用者に一括更新案内を送信</button>
+            </div>
+
+            <div id="alertToast" class="status-badge badge-success" style="display: none; width: 100%; padding: 0.75rem; margin-bottom: 1rem; text-align: center; justify-content: center; font-size: 0.85rem;">
+              <i class="fa-solid fa-circle-check"></i> 期限間近の利用者 3名に自動で更新申請案内のメールを送信しました
+            </div>
+
+            <div class="user-table-wrapper">
+              <table class="lumina-table">
+                <thead>
+                  <tr>
+                    <th>利用者氏名</th>
+                    <th>要介護度</th>
+                    <th>認定有効期間</th>
+                    <th>契約期間</th>
+                    <th>ステータス / アラート</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="alert-table-row bg-row-danger" data-status="expired">
+                    <td><strong>高橋 健太郎 様</strong></td>
+                    <td>要介護 3</td>
+                    <td>2024/09/01 ～ 2026/08/15
+                      <div class="days-bar"><div class="days-fill" style="width: 100%; background: #ef4444;"></div></div>
+                    </td>
+                    <td>2024/04/01 ～ 2027/03/31</td>
+                    <td><span class="status-badge badge-expired"><i class="fa-solid fa-circle-exclamation"></i> 認定期限切れ (本日)</span></td>
+                    <td><button class="btn btn-outline btn-sm" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">再申請手続き</button></td>
+                  </tr>
+
+                  <tr class="alert-table-row bg-row-warning" data-status="warning">
+                    <td><strong>山田 和子 様</strong></td>
+                    <td>要介護 2</td>
+                    <td>2024/09/01 ～ 2026/08/27
+                      <div class="days-bar"><div class="days-fill" style="width: 85%; background: #f59e0b;"></div></div>
+                    </td>
+                    <td>2024/09/01 ～ 2026/08/31</td>
+                    <td><span class="status-badge badge-warning"><i class="fa-solid fa-clock"></i> 残り12日 (要更新)</span></td>
+                    <td><button class="btn btn-outline btn-sm" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">更新通知送付</button></td>
+                  </tr>
+
+                  <tr class="alert-table-row bg-row-warning" data-status="warning">
+                    <td><strong>佐藤 翔太 様</strong></td>
+                    <td>要介護 1</td>
+                    <td>2024/10/01 ～ 2026/09/15
+                      <div class="days-bar"><div class="days-fill" style="width: 70%; background: #f59e0b;"></div></div>
+                    </td>
+                    <td>2024/10/01 ～ 2026/09/30</td>
+                    <td><span class="status-badge badge-warning"><i class="fa-solid fa-clock"></i> 残り31日 (準備開始)</span></td>
+                    <td><button class="btn btn-outline btn-sm" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">申請書類作成</button></td>
+                  </tr>
+
+                  <tr class="alert-table-row" data-status="success">
+                    <td><strong>鈴木 美咲 様</strong></td>
+                    <td>要介護 4</td>
+                    <td>2025/04/01 ～ 2027/03/31
+                      <div class="days-bar"><div class="days-fill" style="width: 25%; background: #10b981;"></div></div>
+                    </td>
+                    <td>2025/04/01 ～ 2028/03/31</td>
+                    <td><span class="status-badge badge-success"><i class="fa-solid fa-circle-check"></i> 正常 (残り228日)</span></td>
+                    <td><button class="btn btn-outline btn-sm" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">詳細確認</button></td>
+                  </tr>
+
+                  <tr class="alert-table-row" data-status="success">
+                    <td><strong>中村 義雄 様</strong></td>
+                    <td>要支援 2</td>
+                    <td>2025/06/01 ～ 2027/05/31
+                      <div class="days-bar"><div class="days-fill" style="width: 15%; background: #10b981;"></div></div>
+                    </td>
+                    <td>2025/06/01 ～ 2027/05/31</td>
+                    <td><span class="status-badge badge-success"><i class="fa-solid fa-circle-check"></i> 正常 (残り289日)</span></td>
+                    <td><button class="btn btn-outline btn-sm" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">詳細確認</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Panel 3: Additions & Delays -->
+          <div id="panel-kasan" class="lumina-panel">
+            <div class="kasan-grid">
+              
+              <!-- Left: Additions Config -->
+              <div class="kasan-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <h4 style="color: #f8fafc; font-size: 1rem;"><i class="fa-solid fa-sliders text-success"></i> 月別体制加算・個別サービス加算設定</h4>
+                  <span class="unit-tag" style="background: rgba(2,132,199,0.2); color: #38bdf8;">2026年8月度</span>
+                </div>
+
+                <div class="kasan-item-list">
+                  <label class="kasan-checkbox-label">
+                    <span><i class="fa-solid fa-check-double text-primary"></i> 初回加算 (居宅介護支援)</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <span class="unit-tag">+300 単位</span>
+                      <input type="checkbox" class="kasan-calc-cb" data-units="300" checked>
+                    </div>
+                  </label>
+
+                  <label class="kasan-checkbox-label">
+                    <span><i class="fa-solid fa-brain text-purple"></i> 認知症加算 (個別サービス)</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <span class="unit-tag">+150 単位</span>
+                      <input type="checkbox" class="kasan-calc-cb" data-units="150" checked>
+                    </div>
+                  </label>
+
+                  <label class="kasan-checkbox-label">
+                    <span><i class="fa-solid fa-notes-medical text-danger"></i> ターミナルケア加算</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <span class="unit-tag">+2,000 単位</span>
+                      <input type="checkbox" class="kasan-calc-cb" data-units="2000">
+                    </div>
+                  </label>
+
+                  <label class="kasan-checkbox-label">
+                    <span><i class="fa-solid fa-user-doctor text-warning"></i> 医療連携体制加算 (予防/居宅)</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <span class="unit-tag">+100 単位</span>
+                      <input type="checkbox" class="kasan-calc-cb" data-units="100" checked>
+                    </div>
+                  </label>
+                </div>
+
+                <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <span style="font-size: 0.8rem; color: #94a3b8;">合計算定単位数</span>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: #38bdf8;" id="totalUnitsVal">5,050</div>
+                  </div>
+                  <div style="text-align: right;">
+                    <span style="font-size: 0.8rem; color: #94a3b8;">概算請求額 (10.45円/単位)</span>
+                    <div style="font-size: 1.25rem; font-weight: 700; color: #34d399;" id="totalYenVal">¥52,773</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Delays & Returns Kanban -->
+              <div class="kasan-box">
+                <h4 style="color: #f8fafc; font-size: 1rem;"><i class="fa-solid fa-list-check text-warning"></i> 月遅れ・返戻請求追跡カンバン</h4>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.2rem;">カードをクリックして対応ステータスを進められます</p>
+
+                <div class="kanban-board">
+                  <div class="kanban-col">
+                    <div class="kanban-col-head"><span>未対応</span></div>
+                    <div class="kanban-card" data-state="todo">
+                      <span class="status-badge badge-expired kanban-tag" style="margin-bottom: 0.3rem;">要修正</span>
+                      <div><strong>田中 様 (07月返戻)</strong></div>
+                      <div style="font-size: 0.75rem; color: #94a3b8;">理由: 被保険者番号1桁誤記</div>
+                    </div>
+                  </div>
+
+                  <div class="kanban-col" id="kanbanColPreparing">
+                    <div class="kanban-col-head"><span>準備中</span></div>
+                  </div>
+
+                  <div class="kanban-col" id="kanbanColSubmitted">
+                    <div class="kanban-col-head"><span>提出済</span></div>
+                    <div class="kanban-card" data-state="submitted">
+                      <span class="status-badge badge-lumina kanban-tag" style="margin-bottom: 0.3rem;">提出済</span>
+                      <div><strong>小林 様 (06月月遅れ)</strong></div>
+                      <div style="font-size: 0.75rem; color: #94a3b8;">再審査請求書 提出完了</div>
+                    </div>
+                  </div>
+
+                  <div class="kanban-col" id="kanbanColDone">
+                    <div class="kanban-col-head"><span>完了</span></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Panel 4: CSV Matching -->
+          <div id="panel-csv" class="lumina-panel">
+            <div class="csv-upload-banner">
+              <div>
+                <h4 style="color: #f8fafc; font-size: 1rem;"><i class="fa-solid fa-file-arrow-up text-primary"></i> 国保連実績CSV・他システムデータ自動照合</h4>
+                <p style="font-size: 0.85rem; color: #94a3b8;">登録されている利用者・加算データとCSVを自動で突合し、単位数の相違や過誤リスクを事前検出します</p>
+              </div>
+              <button id="btnImportCSV" class="btn btn-primary"><i class="fa-solid fa-file-csv"></i> 国保連実績CSVを取り込んで自動照合</button>
+            </div>
+
+            <div id="csvDiffContainer" style="display: none;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h5 style="color: #f87171;"><i class="fa-solid fa-triangle-exclamation"></i> 3件の不一致・照合エラーを自動検出しました</h5>
+                <button id="btnFixAllCSV" class="btn btn-outline btn-sm"><i class="fa-solid fa-wand-magic-sparkles text-success"></i> AI自動修正を適用</button>
+              </div>
+
+              <div class="csv-diff-card" style="border-left: 4px solid #ef4444;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong>山田 和子 様 (被保険者番号: H123456789)</strong>
+                  <span class="diff-alert-tag">単位数不一致</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 0.4rem;">
+                  システム登録: <strong>4,800 単位</strong> (初回加算あり) vs CSVデータ: <strong>4,500 単位</strong> (加算漏れ)
+                </p>
+              </div>
+
+              <div class="csv-diff-card" style="border-left: 4px solid #f59e0b;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong>佐藤 翔太 様 (被保険者番号: H987654321)</strong>
+                  <span class="diff-alert-tag" style="background: rgba(245,158,11,0.2); color: #fbbf24; border-color: rgba(245,158,11,0.4);">番号入力相違</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 0.4rem;">
+                  システム登録: <strong>H987654321</strong> vs CSVデータ: <strong>H987654320</strong> (末尾誤り)
+                </p>
+              </div>
+
+              <div class="csv-diff-card" style="border-left: 4px solid #f59e0b;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong>高橋 健太郎 様</strong>
+                  <span class="diff-alert-tag" style="background: rgba(245,158,11,0.2); color: #fbbf24; border-color: rgba(245,158,11,0.4);">要介護度差分</span>
+                </div>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 0.4rem;">
+                  システム登録: <strong>要介護 2</strong> vs CSVデータ: <strong>要介護 3</strong> (認定更新反映のズレ)
+                </p>
+              </div>
+            </div>
+
+            <div id="csvSuccessBanner" class="status-badge badge-success" style="display: none; width: 100%; padding: 1rem; text-align: center; justify-content: center; font-size: 0.9rem;">
+              <i class="fa-solid fa-circle-check"></i> すべての不一致項目が正常に補正されました。月次請求ファイルの送信準備が完了しました。
+            </div>
+          </div>
+
+          <!-- Panel 5: Stats Dashboard -->
+          <div id="panel-stats" class="lumina-panel">
+            <div class="stats-cards-grid">
+              <div class="stat-metric-card">
+                <span style="font-size: 0.8rem; color: #94a3b8;">当月売上見込</span>
+                <div class="stat-val" id="tenantSalesCount">¥4,820,000</div>
+                <span style="font-size: 0.75rem; color: #34d399;"><i class="fa-solid fa-arrow-trend-up"></i> 前月比 +6.4%</span>
+              </div>
+              <div class="stat-metric-card">
+                <span style="font-size: 0.8rem; color: #94a3b8;">管理利用者数</span>
+                <div class="stat-val" id="tenantUserCount">148 名</div>
+                <span style="font-size: 0.75rem; color: #38bdf8;">アクティブ運用中</span>
+              </div>
+              <div class="stat-metric-card">
+                <span style="font-size: 0.8rem; color: #94a3b8;">加算取得率</span>
+                <div class="stat-val" style="color: #34d399;">94.2%</div>
+                <span style="font-size: 0.75rem; color: #34d399;">業界平均超え</span>
+              </div>
+            </div>
+
+            <div class="checklist-box">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <h4 style="color: #f8fafc; font-size: 0.95rem;"><i class="fa-solid fa-clipboard-check text-primary"></i> 業務の自己点検チェックリスト（返戻ゼロ点検）</h4>
+                <span style="font-size: 0.85rem; color: #38bdf8; font-weight: 700;" id="checklistPercent">50%</span>
+              </div>
+              
+              <div class="days-bar" style="width: 100%; height: 8px; margin-bottom: 1rem;"><div class="days-fill" id="checklistProgress" style="width: 50%; background: linear-gradient(90deg, #0284c7, #10b981);"></div></div>
+
+              <label class="check-item">
+                <input type="checkbox" class="self-check-cb" checked>
+                <span>今月認定期限を迎える利用者の更新申請は完了しているか</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" class="self-check-cb" checked>
+                <span>加算取得条件（初回加算・体制加算など）を満たす実績記録が存在するか</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" class="self-check-cb">
+                <span>国保連照合における単位数差異エラー（3件）の修正確認</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" class="self-check-cb">
+                <span>月遅れ・再審査請求書類の提出・送付完了</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Panel 6: Mobile Responsiveness -->
+          <div id="panel-mobile" class="lumina-panel">
+            <div class="device-toggle-bar">
+              <button id="btnDeviceDesktop" class="btn btn-outline btn-sm active"><i class="fa-solid fa-desktop"></i> PC大画面表示 (テーブルUI)</button>
+              <button id="btnDeviceMobile" class="btn btn-outline btn-sm"><i class="fa-solid fa-mobile-screen"></i> スマホ表示 (ボトムナビUI)</button>
+            </div>
+
+            <!-- Desktop Preview View -->
+            <div id="viewDesktopDemo">
+              <div style="background: rgba(15,23,42,0.6); padding: 1rem; border-radius: 8px; border: 1px solid var(--lumina-border); text-align: center;">
+                <p style="color: #94a3b8; font-size: 0.85rem;">💻 1200px以上の大画面PCモニターでは、すべての利用者情報、加算判定、アラートが1画面で俯瞰できるテーブルレイアウトに自動最適化されます。</p>
+              </div>
+            </div>
+
+            <!-- Mobile Simulator Frame View -->
+            <div id="viewMobileDemo" style="display: none;">
+              <div class="mobile-frame-container">
+                <div class="mobile-notch"></div>
+                <div class="mobile-screen-content">
+                  <div id="mobileScreenBody">
+                    <div style="background: rgba(2, 132, 199, 0.15); border-radius: 12px; padding: 1rem; margin-bottom: 0.75rem;">
+                      <h5 style="color: #38bdf8; font-size: 0.9rem;">👋 今日の訪問・タスク</h5>
+                      <p style="font-size: 0.8rem; color: #cbd5e1; margin-top: 0.2rem;">本日の予定: 4件の定期モニタリング</p>
+                    </div>
+                    <div style="background: #1e293b; border-radius: 10px; padding: 0.85rem; border: 1px solid rgba(255,255,255,0.1);">
+                      <span style="font-size: 0.75rem; color: #fbbf24; font-weight:700;">⚠️ 認定期限アラート (1件)</span>
+                      <p style="font-size: 0.8rem; color: #e2e8f0; margin-top: 0.3rem;">山田 和子 様 (要介護2) - 残り12日</p>
+                    </div>
+                  </div>
+
+                  <div class="mobile-bottom-nav">
+                    <div class="mobile-nav-item active" data-screen="home"><i class="fa-solid fa-house"></i><span>ホーム</span></div>
+                    <div class="mobile-nav-item" data-screen="users"><i class="fa-solid fa-users"></i><span>利用者</span></div>
+                    <div class="mobile-nav-item" data-screen="kasan"><i class="fa-solid fa-sliders"></i><span>加算</span></div>
+                    <div class="mobile-nav-item" data-screen="alert"><i class="fa-solid fa-bell"></i><span>通知</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 7: Multi-tenant Security -->
+          <div id="panel-security" class="lumina-panel">
+            <div class="security-banner">
+              <div>
+                <h4 style="color: #34d399; font-size: 1rem;"><i class="fa-solid fa-shield-check"></i> マルチテナント境界保護 (Row-Level Security) 稼働中</h4>
+                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 0.2rem;">他の事業所のデータアクセスをデータベース根本層で完全に隔絶し、漏洩リスクを遮断します</p>
+              </div>
+              <span class="status-badge badge-success"><i class="fa-solid fa-lock"></i> Supabase RLS ACTIVE</span>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <h5 style="color: #f8fafc; font-size: 0.9rem; margin-bottom: 0.5rem;">セキュリティログ・アクセスポリシー実況:</h5>
+              <div id="rlsTenantLog" class="rls-log-console">
+                <div>[Supabase RLS Policy Triggered]</div>
+                <div>QUERY: SELECT * FROM clients WHERE tenant_id = 'org_himawari_01';</div>
+                <div>STATUS: 200 OK (Row-Level Security boundary verified)</div>
+                <div>ISOLATION LEVEL: STRICT_TENANT_ISOLATED</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -446,5 +1015,6 @@
 
   <!-- Scripts -->
   <script src="portfolio.js"></script>
+  <script src="lumina.js"></script>
 </body>
 </html>

@@ -1,0 +1,798 @@
+/* ==========================================================================
+   LuminaCare - 7 Key Features & Interactive App Simulator Styles
+   ========================================================================== */
+
+/* Accent Colors for LuminaCare */
+:root {
+  --lumina-primary: #0284c7;
+  --lumina-primary-hover: #0369a1;
+  --lumina-accent: #10b981;
+  --lumina-warning: #f59e0b;
+  --lumina-danger: #ef4444;
+  --lumina-purple: #8b5cf6;
+  --lumina-bg-card: #1e293b;
+  --lumina-bg-dark: #0f172a;
+  --lumina-border: rgba(255, 255, 255, 0.12);
+}
+
+/* Badge Styles */
+.badge-lumina {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.2), rgba(16, 185, 129, 0.2));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Feature Cards Grid (7 Features) */
+.lumina-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.lumina-feature-card {
+  background: var(--lumina-bg-card);
+  border: 1px solid var(--lumina-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.lumina-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 12px 24px -10px rgba(2, 132, 199, 0.3);
+}
+
+.lumina-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--lumina-primary), var(--lumina-accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lumina-feature-card:hover::before {
+  opacity: 1;
+}
+
+.lumina-card-num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--lumina-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.lumina-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lumina-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.icon-ocr { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+.icon-alert { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.icon-kasan { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.icon-csv { background: rgba(2, 132, 199, 0.2); color: #38bdf8; }
+.icon-stats { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+.icon-mobile { background: rgba(14, 165, 233, 0.2); color: #38bdf8; }
+.icon-security { background: rgba(244, 63, 94, 0.2); color: #fb7185; }
+
+.lumina-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.lumina-card-desc {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.lumina-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
+}
+
+.lumina-card-bullets li {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.lumina-card-bullets li i {
+  color: var(--lumina-accent);
+  margin-top: 0.2rem;
+}
+
+.lumina-btn-demo-trigger {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--lumina-border);
+  color: #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.lumina-btn-demo-trigger:hover {
+  background: var(--lumina-primary);
+  color: #ffffff;
+  border-color: var(--lumina-primary);
+}
+
+/* Interactive Dashboard Container */
+.lumina-app-simulator {
+  background: var(--lumina-bg-card);
+  border: 1px solid var(--lumina-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  margin-top: 2.5rem;
+}
+
+/* App Simulator Header Navigation Bar */
+.lumina-sim-header {
+  background: #0f172a;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--lumina-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lumina-sim-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lumina-sim-logo {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #0284c7, #10b981);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.lumina-sim-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.tenant-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+.tenant-select {
+  background: transparent;
+  border: none;
+  color: #38bdf8;
+  font-weight: 600;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.tenant-select option {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* System Tabs Navigation */
+.lumina-sim-tabs {
+  display: flex;
+  background: #1e293b;
+  border-bottom: 1px solid var(--lumina-border);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.lumina-sim-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.lumina-sim-tabs::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lumina-tab-btn {
+  padding: 0.9rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.lumina-tab-btn:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lumina-tab-btn.active {
+  color: #38bdf8;
+  border-bottom-color: #0284c7;
+  background: rgba(2, 132, 199, 0.1);
+}
+
+/* Tab Panels Content */
+.lumina-sim-content {
+  padding: 1.75rem;
+  min-height: 520px;
+}
+
+.lumina-panel {
+  display: none;
+}
+
+.lumina-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Tab 1: AI OCR Simulator Styles
+   ========================================================================== */
+.ocr-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .ocr-layout-grid { grid-template-columns: 1fr; }
+}
+
+.ocr-upload-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 2px dashed rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.ocr-sample-btns {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-sample {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-sample:hover {
+  background: #0284c7;
+  color: #fff;
+}
+
+.ocr-preview-box {
+  margin-top: 1.25rem;
+  height: 220px;
+  background: #090d16;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scan-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  box-shadow: 0 0 15px #38bdf8;
+  display: none;
+}
+
+.scan-beam.scanning {
+  display: block;
+  animation: scanMove 2s infinite ease-in-out;
+}
+
+@keyframes scanMove {
+  0% { top: 0; }
+  50% { top: 95%; }
+  100% { top: 0; }
+}
+
+.ocr-form-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--lumina-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.ocr-field-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ocr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ocr-field label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.ocr-field input {
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #38bdf8;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.ocr-field input.highlighted {
+  border-color: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+/* ==========================================================================
+   Tab 2: Certificate Alert Board Styles
+   ========================================================================== */
+.alert-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-btn-group {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.btn-filter {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-filter.active, .btn-filter:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.user-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--lumina-border);
+}
+
+.lumina-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.lumina-table th {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--lumina-border);
+}
+
+.lumina-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+
+.lumina-table tr.bg-row-danger {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.lumina-table tr.bg-row-warning {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.badge-expired { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+.badge-warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+.badge-success { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+.days-bar {
+  width: 100px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.days-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   Tab 3: Additions & Delay Management Styles
+   ========================================================================== */
+.kasan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 868px) {
+  .kasan-grid { grid-template-columns: 1fr; }
+}
+
+.kasan-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--lumina-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.kasan-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.kasan-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.kasan-checkbox-label:hover {
+  background: rgba(2, 132, 199, 0.1);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.kasan-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0284c7;
+  cursor: pointer;
+}
+
+.unit-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Kanban Board for Delays & Returns */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .kanban-board { grid-template-columns: repeat(2, 1fr); }
+}
+
+.kanban-col {
+  background: #090d16;
+  border-radius: 8px;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 220px;
+}
+
+.kanban-col-head {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kanban-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.825rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.kanban-card:hover {
+  border-color: #38bdf8;
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   Tab 4: CSV Verification Engine Styles
+   ========================================================================== */
+.csv-upload-banner {
+  background: rgba(2, 132, 199, 0.1);
+  border: 1px dashed #0284c7;
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.csv-diff-card {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid var(--lumina-border);
+  margin-bottom: 1rem;
+}
+
+.diff-alert-tag {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Tab 5: Staff Stats & Dashboard Styles
+   ========================================================================== */
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-metric-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--lumina-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.stat-val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #38bdf8;
+  line-height: 1.2;
+}
+
+.checklist-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--lumina-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+.check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #10b981;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Tab 6: Responsive Device Simulator Styles
+   ========================================================================== */
+.device-toggle-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-frame-container {
+  max-width: 380px;
+  margin: 0 auto;
+  background: #090d16;
+  border: 12px solid #334155;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.mobile-notch {
+  width: 140px;
+  height: 20px;
+  background: #334155;
+  margin: 0 auto;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.mobile-screen-content {
+  padding: 1rem;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background: #1e293b;
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  margin-top: 1rem;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.mobile-nav-item.active {
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   Tab 7: Multi-tenant Security RLS Styles
+   ========================================================================== */
+.security-banner {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rls-log-console {
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #34d399;
+  line-height: 1.6;
+}
