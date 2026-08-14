@@ -407,11 +407,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function loadSampleData() {
     inputCompanyName.value = "Care DX Studio";
     inputCatchphrase.value = "ケアマネ業務をDXで加速。アプリ開発からシステム管理まで";
-    inputNameJa.value = "小林 健一";
-    inputNameEn.value = "KENICHI KOBAYASHI";
+    inputNameJa.value = "山田 太郎";
+    inputNameEn.value = "TARO YAMADA";
     inputTitle.value = "代表 / 介護DXアプリ開発・システム管理者";
     inputPhone.value = "090-1234-5678";
-    inputEmail.value = "k.kobayashi@caredx-lab.com";
+    inputEmail.value = "info@caredx-lab.com";
     inputWebsite.value = "https://caredx-lab.com";
     inputAddress.value = "〒150-0001 東京都渋谷区神宮前 1-2-3";
 
