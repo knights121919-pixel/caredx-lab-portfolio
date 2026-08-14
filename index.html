@@ -100,6 +100,7 @@
           <button class="lumina-tab-btn active" data-tab="main-ui"><i class="fa-solid fa-table-list"></i> 利用者管理画面 (実機UI)</button>
           <button class="lumina-tab-btn" data-tab="sales"><i class="fa-solid fa-chart-line"></i> 売上・実績画面 (実機UI)</button>
           <button class="lumina-tab-btn" data-tab="admin"><i class="fa-solid fa-gears"></i> 管理パネル画面 (実機UI)</button>
+          <button class="lumina-tab-btn" data-tab="ai-check"><i class="fa-solid fa-wand-magic-sparkles"></i> 介護ソフト AI照合 (実機UI)</button>
         </div>
 
         <!-- Simulator Content Panels -->
@@ -204,6 +205,34 @@
                 </div>
               </div>
             </div>
+          <!-- Panel AI Check: Care Software AI Data Consistency Check UI Screenshot -->
+          <div id="panel-ai-check" class="lumina-panel">
+            <div class="lumina-real-screenshot-container">
+              <div class="screenshot-img-wrapper">
+                <img src="lumina_ai_check.png" alt="ルミナケア 介護ソフト AIデータ整合性チェック画面" class="lumina-real-img" style="width: 100%; display: block;">
+              </div>
+              <div class="screenshot-caption" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.95); border-top: 1px solid var(--lumina-border); color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+                <h4 style="color: #34d399; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-wand-magic-sparkles text-success"></i> 介護ソフト AIデータ整合性チェック画面 の主要機能と解説</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #34d399; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-file-pdf text-success" style="margin-right: 0.4rem;"></i>介護ソフトのスクショ/PDFを選択してAI照合</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">既存の介護ソフト画面情報（スクリーンショットやPDF）を取り込み、売上データや契約内容との整合性をAIが自動解析・高速照合します。</p>
+                  </div>
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #38bdf8; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-check-double text-info" style="margin-right: 0.4rem;"></i>照合一致率100%・差分データの即時集計</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">全体の照合一致率（例: 100% 66/66件一致）や、金額/単位/要介護度の不一致、未登録データをダッシュボード形式でひと目で把握できます。</p>
+                  </div>
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #fbbf24; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-filter text-warning" style="margin-right: 0.4rem;"></i>不一致・例外データのワンクリック絞り込み</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">「全件」「不一致のみ」「LuminaCareのみ」「要支援・総合事業（対象外）」タブで確認したいデータのみをワンクリック抽出。</p>
+                  </div>
+                  <div style="background: rgba(30, 41, 59, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="color: #a855f7; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem;"><i class="fa-solid fa-shield-halved text-purple" style="margin-right: 0.4rem;"></i>国保連請求のミス・誤入力を未然防止</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">手作業による転記ミスや請求漏れ・要介護度相違を自動検出し、請求業務の精度向上と監査対策を強力にサポートします。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -230,6 +259,10 @@
           <div style="background: rgba(30, 41, 59, 0.7); padding: 1.2rem; border-radius: 10px; border-left: 4px solid #fbbf24;">
             <div style="color: #fbbf24; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem;">事業所経営・売上実績のリアルタイム可視化</div>
             <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">事業所全体の売上推移や職員別担当実績・処遇改善額がグラフ・数値で一目瞭然となり、収益最大化を強力支援。</p>
+          </div>
+          <div style="background: rgba(30, 41, 59, 0.7); padding: 1.2rem; border-radius: 10px; border-left: 4px solid #a855f7;">
+            <div style="color: #c084fc; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem;">AI照合による請求差分・転記ミスのゼロ化</div>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.6;">介護ソフト画面やPDFをAIが高速照合し、手作業による誤入力やデータ不一致を未然に自動遮断。</p>
           </div>
         </div>
       </div>
