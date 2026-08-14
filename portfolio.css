@@ -168,12 +168,32 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   font-size: 0.9rem;
 }
 
-.nav-links a:hover {
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a i {
+  font-size: 0.95rem;
   color: var(--brand-teal);
+  opacity: 0.9;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover i {
+  color: #38bdf8;
+  opacity: 1;
 }
 
 .mobile-menu-toggle {
