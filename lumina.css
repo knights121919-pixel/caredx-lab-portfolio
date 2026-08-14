@@ -1437,3 +1437,24 @@
   }
 }
 
+.sales-explain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .sales-explain-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.explain-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+
