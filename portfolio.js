@@ -104,11 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> 送信中...`;
 
+      const cTypeSelect = document.getElementById('cType');
+      const consultTypeText = cTypeSelect ? (cTypeSelect.options[cTypeSelect.selectedIndex]?.text || cTypeSelect.value) : '';
+
       const payload = {
         name: document.getElementById('cName')?.value || '',
         organization: document.getElementById('cOrg')?.value || '',
         email: document.getElementById('cEmail')?.value || '',
-        consultType: document.getElementById('cType')?.value || '',
+        consultType: consultTypeText,
         message: document.getElementById('cMessage')?.value || '',
         submittedAt: new Date().toISOString()
       };
