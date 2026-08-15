@@ -409,14 +409,14 @@ document.addEventListener('DOMContentLoaded', () => {
     inputCatchphrase.value = "ケアマネ業務をDXで加速。アプリ開発からシステム管理まで";
     inputNameJa.value = "山田 太郎";
     inputNameEn.value = "TARO YAMADA";
-    inputTitle.value = "代表 / 介護DXアプリ開発・システム管理者";
+    inputTitle.value = "代表 / ケアマネDXアプリ開発・システム管理者";
     inputPhone.value = "090-1234-5678";
     inputEmail.value = "info@caredx-lab.com";
     inputWebsite.value = "https://caredx-lab.com";
     inputAddress.value = "〒150-0001 東京都渋谷区神宮前 1-2-3";
 
     inputBackHeader.value = "SERVICES & SOLUTIONS";
-    inputBackServices.value = "【ケアマネDX アプリ開発 & システム管理】\n・LuminaCare（介護記録・利用者管理DXアプリ）\n・CarePlan Checker（AI書類監査・不整合検知99.8%）\n・利用者ファイルの自動仕分けアプリ開発\n・売上・請求管理 ＆ 介護DX導入コンサルティング";
+    inputBackServices.value = "【ケアマネDX アプリ開発 & システム管理】\n・LuminaCare（介護記録・利用者管理DXアプリ）\n・CarePlan Checker（AI書類監査・不整合検知99.8%）\n・利用者ファイルの自動仕分けアプリ開発\n・売上・請求管理 ＆ ケアマネDX導入コンサルティング";
     inputQrUrl.value = "https://caredx-lab.com";
 
     renderAll();

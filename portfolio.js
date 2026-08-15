@@ -88,28 +88,66 @@ document.addEventListener('DOMContentLoaded', () => {
     takahashiContents.innerHTML = `<span class="empty-text">空</span>`;
   }
 
-  // --- CONTACT FORM LOGIC ---
+  // --- CONTACT FORM LOGIC (Make Webhook 連携対応) ---
   const portfolioContactForm = document.getElementById('portfolioContactForm');
   const contactSuccessAlert = document.getElementById('contactSuccessAlert');
 
+  // Make で発行した Webhook URL
+  const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/bpwtwe0mpt27bcqrhqv2rh8yr571gvhy'; 
+
   if (portfolioContactForm) {
-    portfolioContactForm.addEventListener('submit', (e) => {
+    portfolioContactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const submitBtn = portfolioContactForm.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> 送信中...`;
 
-      setTimeout(() => {
+      const payload = {
+        name: document.getElementById('cName')?.value || '',
+        organization: document.getElementById('cOrg')?.value || '',
+        email: document.getElementById('cEmail')?.value || '',
+        consultType: document.getElementById('cType')?.value || '',
+        message: document.getElementById('cMessage')?.value || '',
+        submittedAt: new Date().toISOString()
+      };
+
+      try {
+        if (MAKE_WEBHOOK_URL) {
+          try {
+            await fetch(MAKE_WEBHOOK_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+          } catch (corsErr) {
+            // ローカルファイル実行等でのCORS回避フォールバック
+            await fetch(MAKE_WEBHOOK_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: JSON.stringify(payload)
+            });
+          }
+        } else {
+          // Webhook URLが空の場合はシミュレーション動作
+          await new Promise(resolve => setTimeout(resolve, 800));
+        }
+
         portfolioContactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> 送信する（無料）`;
         contactSuccessAlert.classList.remove('style-hidden');
 
         setTimeout(() => {
           contactSuccessAlert.classList.add('style-hidden');
         }, 6000);
-      }, 1000);
+
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('送信時にエラーが発生いたしました。時間をおいて再度お試しください。');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
     });
   }
 
