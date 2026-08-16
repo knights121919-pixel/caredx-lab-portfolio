@@ -653,7 +653,15 @@ document.addEventListener('DOMContentLoaded', () => {
       html2canvas(elem, {
         scale: 4, // 350+ DPI high resolution
         useCORS: true,
-        backgroundColor: null
+        backgroundColor: null,
+        onclone: (clonedDoc) => {
+          // Ensure cloned elements retain precise font styles
+          const clonedCard = clonedDoc.getElementById(elem.id);
+          if (clonedCard && elem) {
+            clonedCard.style.fontSize = elem.style.fontSize;
+            syncElementStyles(elem, clonedCard);
+          }
+        }
       }).then(canvas => {
         const link = document.createElement('a');
         link.download = filename;
@@ -667,13 +675,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const printFront = document.getElementById('printTargetFront');
     const printBack = document.getElementById('printTargetBack');
 
-    printFront.innerHTML = cardFront.innerHTML;
-    printBack.innerHTML = cardBack.innerHTML;
+    if (printFront && cardFront) {
+      printFront.innerHTML = cardFront.innerHTML;
+      printFront.className = cardFront.className;
+      printFront.style.cssText = cardFront.style.cssText;
+      syncElementStyles(cardFront, printFront);
+    }
 
-    printFront.className = cardFront.className;
-    printBack.className = cardBack.className;
+    if (printBack && cardBack) {
+      printBack.innerHTML = cardBack.innerHTML;
+      printBack.className = cardBack.className;
+      printBack.style.cssText = cardBack.style.cssText;
+      syncElementStyles(cardBack, printBack);
+    }
 
     window.print();
+  }
+
+  function syncElementStyles(src, dest) {
+    const srcNodes = src.querySelectorAll('*');
+    const destNodes = dest.querySelectorAll('*');
+    srcNodes.forEach((node, i) => {
+      if (destNodes[i] && node.style.cssText) {
+        destNodes[i].style.cssText = node.style.cssText;
+      }
+    });
   }
 
   // Run Startup

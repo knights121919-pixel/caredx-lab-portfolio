@@ -1189,6 +1189,10 @@ a {
     page-break-inside: avoid;
     box-shadow: none !important;
     border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    /* Maintain exact 91mm x 55mm scale (91mm / 546px = 0.166667mm/px) */
+    transform-origin: top left;
   }
 }
 
