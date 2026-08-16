@@ -107,8 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const cTypeSelect = document.getElementById('cType');
       const consultTypeText = cTypeSelect ? (cTypeSelect.options[cTypeSelect.selectedIndex]?.text || cTypeSelect.value) : '';
 
-      const cUsersCountSelect = document.getElementById('cUsersCount');
-      const usersCountText = cUsersCountSelect ? (cUsersCountSelect.options[cUsersCountSelect.selectedIndex]?.text || cUsersCountSelect.value) : '';
+      const cUsersCountInput = document.getElementById('cUsersCount');
+      const usersCountText = cUsersCountInput?.value ? `${cUsersCountInput.value}名` : '';
 
       const payload = {
         name: document.getElementById('cName')?.value || '',
