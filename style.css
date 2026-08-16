@@ -200,6 +200,20 @@ a {
   letter-spacing: 0.05em;
 }
 
+.badge-autosave {
+  font-size: 0.65rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: opacity 0.3s ease;
+}
+
 .brand-sub {
   font-size: 0.75rem;
   color: var(--text-muted);
@@ -887,20 +901,20 @@ a {
 }
 
 .template-minimal-modern .card-logo img {
-  max-height: 42px;
-  max-width: 120px;
+  max-height: 48px;
+  max-width: 140px;
   object-fit: contain;
 }
 
 .template-minimal-modern .disp-company {
-  font-size: 1.15rem;
+  font-size: 1.45em;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--card-primary-color);
 }
 
 .template-minimal-modern .disp-catchphrase {
-  font-size: 0.725rem;
+  font-size: 0.85em;
   color: #64748b;
   font-weight: 400;
 }
@@ -910,21 +924,22 @@ a {
 }
 
 .template-minimal-modern .disp-title {
-  font-size: 0.8rem;
+  font-size: 0.95em;
   color: var(--card-accent-color);
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
 
 .template-minimal-modern .disp-name-ja {
-  font-size: 1.6rem;
+  font-size: 2.1em;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--card-primary-color);
+  line-height: 1.2;
 }
 
 .template-minimal-modern .disp-name-en {
-  font-size: 0.75rem;
+  font-size: 0.85em;
   letter-spacing: 0.15em;
   color: #94a3b8;
   display: block;
@@ -933,8 +948,8 @@ a {
 .template-minimal-modern .card-contact-zone {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.35rem 1rem;
-  font-size: 0.75rem;
+  gap: 0.4rem 1rem;
+  font-size: 0.85em;
   border-top: 1px solid #e2e8f0;
   padding-top: 0.75rem;
 }
@@ -954,9 +969,9 @@ a {
 
 .contact-icon {
   color: var(--card-accent-color);
-  width: 14px;
+  width: 16px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.9em;
 }
 
 /* Back Side Minimal */
@@ -972,7 +987,7 @@ a {
 }
 
 .disp-back-header {
-  font-size: 0.85rem;
+  font-size: 0.95em;
   font-weight: 700;
   color: var(--card-primary-color);
   letter-spacing: 0.02em;
@@ -990,7 +1005,7 @@ a {
 }
 
 .disp-back-services {
-  font-size: 0.75rem;
+  font-size: 0.85em;
   line-height: 1.6;
   color: var(--card-text-color);
   white-space: pre-line;
@@ -1020,14 +1035,14 @@ a {
 }
 
 .qr-label {
-  font-size: 0.625rem;
+  font-size: 0.7em;
   color: #64748b;
   text-align: center;
 }
 
 .back-footer-brand {
   text-align: right;
-  font-size: 0.7rem;
+  font-size: 0.75em;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #94a3b8;
@@ -1043,7 +1058,7 @@ a {
 }
 
 .template-executive-gold .disp-company {
-  font-size: 1.2rem;
+  font-size: 1.5em;
   font-family: var(--font-serif);
   font-weight: 700;
   color: #1e293b;
@@ -1051,7 +1066,7 @@ a {
 
 .template-executive-gold .disp-name-ja {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 2.25em;
   letter-spacing: 0.15em;
   color: #0f172a;
 }
@@ -1072,7 +1087,7 @@ a {
 }
 
 .template-creative-studio .disp-name-ja {
-  font-size: 1.8rem;
+  font-size: 2.3em;
   font-weight: 800;
 }
 

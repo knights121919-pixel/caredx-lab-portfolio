@@ -31,7 +31,7 @@
       <div class="brand">
         <div class="brand-icon"><i class="fa-solid fa-id-card"></i></div>
         <div class="brand-text">
-          <h1>Meishi Craft <span class="badge-pro">PRO</span></h1>
+          <h1>Meishi Craft <span class="badge-pro">PRO</span> <span id="autoSaveBadge" class="badge-autosave" title="作成・編集データは自動保存されます"><i class="fa-solid fa-check"></i> 自動保存済み</span></h1>
           <p class="brand-sub">個人事業主・フリーランスのための名刺スタジオ</p>
         </div>
       </div>
@@ -349,12 +349,22 @@
             <!-- Fine-tuning Slider Controls -->
             <div class="form-group-card">
               <h4><i class="fa-solid fa-expand"></i> サイズ調整</h4>
-              <div class="form-group">
+              <div class="form-group mb-md">
                 <div class="flex-between">
                   <label for="rangeFontSize">全体文字サイズ比率</label>
-                  <span id="valFontSize">100%</span>
+                  <span id="valFontSize" class="color-hex">110%</span>
                 </div>
-                <input type="range" id="rangeFontSize" min="80" max="120" value="100" class="form-range">
+                <input type="range" id="rangeFontSize" min="80" max="160" value="110" class="form-range">
+                <small class="help-text">スライダーで名刺全体の文字を拡大・縮小（最大160%）</small>
+              </div>
+
+              <div class="form-group mt-md">
+                <div class="flex-between">
+                  <label for="rangeNameSize">氏名の文字サイズ比率（個別強調）</label>
+                  <span id="valNameSize" class="color-hex">100%</span>
+                </div>
+                <input type="range" id="rangeNameSize" min="80" max="150" value="100" class="form-range">
+                <small class="help-text">氏名（名前）の大きさだけをさらに強調・拡大できます</small>
               </div>
             </div>
 
