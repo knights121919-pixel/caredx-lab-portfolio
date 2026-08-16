@@ -87,10 +87,11 @@
       border-collapse: collapse;
       margin-bottom: 1rem;
       font-size: 0.82rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .sec-table th, .sec-table td {
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 0.45rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 0.75rem;
       text-align: left;
     }
     .sec-table th {
@@ -123,7 +124,7 @@
       margin-bottom: 0.75rem;
     }
 
-    /* --- Compact Print Styles (Optimized for A4 Single/Double Page) --- */
+    /* --- Robust Print Styles (Guarantees Sharp Border Lines) --- */
     @media print {
       @page {
         size: A4 portrait;
@@ -135,6 +136,8 @@
         padding-top: 0 !important;
         font-size: 9.5pt !important;
         line-height: 1.35 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
       .doc-container {
         border: none !important;
@@ -148,7 +151,7 @@
         display: none !important;
       }
       .doc-header {
-        border-bottom: 1.5pt solid #000000 !important;
+        border-bottom: 2pt solid #000000 !important;
         padding-bottom: 4pt !important;
         margin-bottom: 8pt !important;
       }
@@ -167,34 +170,40 @@
         padding-left: 4pt !important;
         margin: 8pt 0 4pt 0 !important;
       }
+      
+      /* 強固な印刷用テーブルスタイル（線欠け防止） */
       .sec-table {
+        width: 100% !important;
         font-size: 8.5pt !important;
-        margin-bottom: 6pt !important;
+        margin-bottom: 8pt !important;
+        border-collapse: collapse !important;
+        border: 1.5pt solid #000000 !important; /* テーブル全体を確実に黒枠で囲む */
         page-break-inside: avoid;
       }
-      .sec-table th {
-        background: #f1f5f9 !important;
-        color: #000000 !important;
-        font-weight: bold !important;
-        padding: 3pt 5pt !important;
-      }
-      .sec-table td {
-        border: 0.5pt solid #64748b !important;
-        color: #000000 !important;
-        padding: 3pt 5pt !important;
-      }
-      .badge-yes {
-        background: transparent !important;
-        border: 0.5pt solid #000000 !important;
-        color: #000000 !important;
-        font-weight: bold !important;
-        padding: 1pt 3pt !important;
-      }
-      .note-box {
-        background: #f8fafc !important;
-        border: 0.5pt solid #94a3b8 !important;
+      .sec-table th, .sec-table td {
+        border: 1pt solid #1e293b !important; /* 各セルの4方向枠線を明確に描画 */
         color: #000000 !important;
         padding: 4pt 6pt !important;
+        background-clip: padding-box !important;
+      }
+      .sec-table th {
+        background: #e2e8f0 !important;
+        font-weight: bold !important;
+        border-bottom: 1.5pt solid #000000 !important;
+      }
+      .badge-yes {
+        background: #f1f5f9 !important;
+        border: 1pt solid #000000 !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        padding: 1pt 4pt !important;
+        display: inline-block !important;
+      }
+      .note-box {
+        background: #ffffff !important;
+        border: 1pt solid #000000 !important;
+        color: #000000 !important;
+        padding: 5pt 7pt !important;
         font-size: 8pt !important;
         margin-top: 6pt !important;
       }
@@ -237,10 +246,10 @@
       <div class="sec-h2">1. 事業者基本情報</div>
       <table class="sec-table">
         <tr>
-          <th style="width: 15%;">事業体名称</th>
-          <td style="width: 35%;">ケアマネDXラボ</td>
-          <th style="width: 15%;">代表者</th>
-          <td style="width: 35%;">小林 健一</td>
+          <th style="width: 16%;">事業体名称</th>
+          <td style="width: 34%;">ケアマネDXラボ</td>
+          <th style="width: 16%;">代表者</th>
+          <td style="width: 34%;">小林 健一</td>
         </tr>
         <tr>
           <th>公式URL</th>
@@ -258,8 +267,8 @@
       <table class="sec-table">
         <thead>
           <tr>
-            <th style="width: 20%;">管理分類</th>
-            <th style="width: 25%;">確認項目</th>
+            <th style="width: 22%;">管理分類</th>
+            <th style="width: 26%;">確認項目</th>
             <th style="width: 12%; text-align: center;">判定</th>
             <th>詳細・技術仕様補足</th>
           </tr>
