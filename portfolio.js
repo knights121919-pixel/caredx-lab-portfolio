@@ -107,11 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const cTypeSelect = document.getElementById('cType');
       const consultTypeText = cTypeSelect ? (cTypeSelect.options[cTypeSelect.selectedIndex]?.text || cTypeSelect.value) : '';
 
+      const cUsersCountSelect = document.getElementById('cUsersCount');
+      const usersCountText = cUsersCountSelect ? (cUsersCountSelect.options[cUsersCountSelect.selectedIndex]?.text || cUsersCountSelect.value) : '';
+
       const payload = {
         name: document.getElementById('cName')?.value || '',
         organization: document.getElementById('cOrg')?.value || '',
         email: document.getElementById('cEmail')?.value || '',
         consultType: consultTypeText,
+        usersCount: usersCountText,
         message: document.getElementById('cMessage')?.value || '',
         submittedAt: new Date().toISOString()
       };
