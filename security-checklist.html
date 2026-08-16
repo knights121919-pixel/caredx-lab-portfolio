@@ -20,74 +20,84 @@
       background-color: #0f172a;
       color: #cbd5e1;
       font-family: 'Noto Sans JP', sans-serif;
-      line-height: 1.7;
-      padding-top: 80px;
+      line-height: 1.5;
+      padding-top: 70px;
     }
     .doc-container {
-      max-width: 960px;
-      margin: 2rem auto 4rem;
-      padding: 2.5rem;
-      background: rgba(30, 41, 59, 0.85);
+      max-width: 900px;
+      margin: 1.5rem auto 3rem;
+      padding: 2rem;
+      background: rgba(30, 41, 59, 0.9);
       border: 1px solid rgba(52, 211, 153, 0.3);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
     .doc-header {
       border-bottom: 2px solid rgba(52, 211, 153, 0.3);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: flex-end;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
     }
     .doc-title h1 {
-      font-size: 1.6rem;
+      font-size: 1.35rem;
       color: #ffffff;
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
+      margin: 0;
     }
     .doc-meta {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #94a3b8;
-      margin-top: 0.4rem;
+      margin-top: 0.25rem;
     }
     .print-btn {
       background: #10b981;
       color: #ffffff;
       border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       transition: background 0.2s;
       text-decoration: none;
     }
     .print-btn:hover {
       background: #059669;
     }
+    .sec-h2 {
+      font-size: 0.98rem;
+      color: #34d399;
+      font-weight: 700;
+      margin: 1.2rem 0 0.5rem 0;
+      border-left: 3px solid #34d399;
+      padding-left: 0.5rem;
+    }
     .sec-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 2rem;
-      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      font-size: 0.82rem;
     }
     .sec-table th, .sec-table td {
       border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 0.85rem 1rem;
+      padding: 0.45rem 0.75rem;
       text-align: left;
     }
     .sec-table th {
       background: rgba(15, 23, 42, 0.8);
-      color: #34d399;
+      color: #38bdf8;
       font-weight: 700;
+      white-space: nowrap;
     }
     .sec-table tr:nth-child(even) {
       background: rgba(15, 23, 42, 0.3);
@@ -96,50 +106,97 @@
       background: rgba(16, 185, 129, 0.2);
       border: 1px solid #10b981;
       color: #6ee7b7;
-      padding: 0.25rem 0.6rem;
+      padding: 0.15rem 0.45rem;
       border-radius: 4px;
       font-weight: 700;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       white-space: nowrap;
     }
     .back-link {
       color: #38bdf8;
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 1rem;
+      gap: 0.3rem;
+      margin-bottom: 0.75rem;
     }
+
+    /* --- Compact Print Styles (Optimized for A4 Single/Double Page) --- */
     @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 10mm 12mm;
+      }
       body {
         background: #ffffff !important;
         color: #000000 !important;
         padding-top: 0 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
       }
       .doc-container {
         border: none !important;
         box-shadow: none !important;
         background: #ffffff !important;
         padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
       }
       .navbar, .footer, .print-btn, .back-link {
         display: none !important;
       }
+      .doc-header {
+        border-bottom: 1.5pt solid #000000 !important;
+        padding-bottom: 4pt !important;
+        margin-bottom: 8pt !important;
+      }
       .doc-title h1 {
         color: #000000 !important;
+        font-size: 13pt !important;
+      }
+      .doc-meta {
+        color: #333333 !important;
+        font-size: 8pt !important;
+      }
+      .sec-h2 {
+        color: #000000 !important;
+        font-size: 10pt !important;
+        border-left: 3pt solid #000000 !important;
+        padding-left: 4pt !important;
+        margin: 8pt 0 4pt 0 !important;
+      }
+      .sec-table {
+        font-size: 8.5pt !important;
+        margin-bottom: 6pt !important;
+        page-break-inside: avoid;
       }
       .sec-table th {
         background: #f1f5f9 !important;
         color: #000000 !important;
+        font-weight: bold !important;
+        padding: 3pt 5pt !important;
       }
-      .sec-table th, .sec-table td {
-        border: 1px solid #cbd5e1 !important;
+      .sec-table td {
+        border: 0.5pt solid #64748b !important;
         color: #000000 !important;
+        padding: 3pt 5pt !important;
       }
       .badge-yes {
-        border: 1px solid #000000 !important;
+        background: transparent !important;
+        border: 0.5pt solid #000000 !important;
         color: #000000 !important;
+        font-weight: bold !important;
+        padding: 1pt 3pt !important;
+      }
+      .note-box {
+        background: #f8fafc !important;
+        border: 0.5pt solid #94a3b8 !important;
+        color: #000000 !important;
+        padding: 4pt 6pt !important;
+        font-size: 8pt !important;
+        margin-top: 6pt !important;
       }
     }
   </style>
@@ -171,126 +228,96 @@
         <div class="doc-title">
           <h1><i class="fa-solid fa-file-shield text-success"></i> 情報セキュリティチェックシート標準回答書</h1>
           <div class="doc-meta">
-            対象プロダクト: LuminaCare / CareDoc AI / 各種業務効率化Webツール | 最終更新日: 2026年8月17日
+            対象プロダクト: LuminaCare / CareDoc AI / 各種Webツール | 最終更新日: 2026年8月17日
           </div>
         </div>
         <button onclick="window.print()" class="print-btn"><i class="fa-solid fa-print"></i> 印刷 / PDF保存</button>
       </div>
 
-      <h2 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.8rem;">1. 会社・事業者基本情報</h2>
+      <div class="sec-h2">1. 事業者基本情報</div>
       <table class="sec-table">
         <tr>
-          <th style="width: 25%;">事業体名称</th>
-          <td>ケアマネDXラボ</td>
-        </tr>
-        <tr>
-          <th>代表者</th>
-          <td>小林 健一</td>
-        </tr>
-        <tr>
-          <th>事業内容</th>
-          <td>ケアマネジャー向け業務効率化アプリ開発・システム保守管理</td>
+          <th style="width: 15%;">事業体名称</th>
+          <td style="width: 35%;">ケアマネDXラボ</td>
+          <th style="width: 15%;">代表者</th>
+          <td style="width: 35%;">小林 健一</td>
         </tr>
         <tr>
           <th>公式URL</th>
           <td>https://caredx-lab.com</td>
-        </tr>
-        <tr>
           <th>連絡先メール</th>
           <td>k.kobayashi@caredx-lab.com</td>
         </tr>
         <tr>
-          <th>準拠ガイドライン</th>
-          <td>厚生労働省「医療・介護関係事業者における個人情報の適切な取扱いのためのガイドライン」</td>
+          <th>準拠指針</th>
+          <td colspan="3">厚生労働省「医療・介護関係事業者における個人情報の適切な取扱いのためのガイドライン」</td>
         </tr>
       </table>
 
-      <h2 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.8rem;">2. データ保護・暗号化体制</h2>
+      <div class="sec-h2">2. 情報セキュリティ要件・体制 回答一覧</div>
       <table class="sec-table">
         <thead>
           <tr>
-            <th style="width: 28%;">管理項目</th>
-            <th style="width: 18%;">体制</th>
-            <th>詳細・補足説明</th>
+            <th style="width: 20%;">管理分類</th>
+            <th style="width: 25%;">確認項目</th>
+            <th style="width: 12%; text-align: center;">判定</th>
+            <th>詳細・技術仕様補足</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>通信の暗号化</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>すべてのWeb通信・データ転送に256bit SSL/TLS (HTTPS) 暗号化を強制適用しています。</td>
+            <td rowspan="3" style="font-weight: 700;">データ保護・暗号化</td>
+            <td>通信の暗号化 (SSL/TLS)</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>全Web通信に金融機関同等の256bit SSL/TLS (HTTPS) 暗号化を強制適用。</td>
           </tr>
           <tr>
-            <td><strong>保存データの暗号化</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>サーバー上に保存されるデータベースおよびストレージファイルは暗号化（AES-256規格等）されています。</td>
+            <td>保存データの暗号化</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>データベースおよびストレージファイルはAES-256規格等で暗号化保存。</td>
           </tr>
           <tr>
-            <td><strong>バックアップ体制</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>データの破損・失われる事態に備え、定期的な自動バックアップと世代管理を実施しています。</td>
+            <td>自動バックアップ</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>データ破損・失われる事態を防ぐため、世代管理による定期バックアップを実施。</td>
+          </tr>
+          <tr>
+            <td rowspan="3" style="font-weight: 700;">AI機能・個人情報保護</td>
+            <td>AI再学習の完全遮断</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>商用API契約により、取り込んだデータが第三者AIの学習に使用されることは一切ありません。</td>
+          </tr>
+          <tr>
+            <td>目的外利用・第三者提供の禁止</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>データはサービス提供目的のみに使用し、第三者提供・二次利用を厳禁。</td>
+          </tr>
+          <tr>
+            <td>安全保護領域での解析</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>ブラウザ内ローカル処理および日本国内セキュリティ要件を満たした領域で実行。</td>
+          </tr>
+          <tr>
+            <td rowspan="3" style="font-weight: 700;">アクセス制御・管理</td>
+            <td>ユーザー認証・アクセス権限</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>ユーザーID/パスワード認証および管理者・一般職員の権限分離に対応。</td>
+          </tr>
+          <tr>
+            <td>操作・アクセスログ保管</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>ログイン履歴、データの変更・削除等の操作ログを追跡保持。</td>
+          </tr>
+          <tr>
+            <td>インシデント報告・サポート</td>
+            <td style="text-align: center;"><span class="badge-yes">適合 (Yes)</span></td>
+            <td>障害発生時の報告体制および公式窓口（k.kobayashi@caredx-lab.com）を常設。</td>
           </tr>
         </tbody>
       </table>
 
-      <h2 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.8rem;">3. AI機能と個人情報・再学習防止（CareDoc AI等）</h2>
-      <table class="sec-table">
-        <thead>
-          <tr>
-            <th style="width: 28%;">管理項目</th>
-            <th style="width: 18%;">体制</th>
-            <th>詳細・補足説明</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>AIによる再学習の遮断</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>商用API契約を締結しており、取り込んだ書類テキストや画像データが第三者AIの再学習（Training）に使用されることは一切ありません。</td>
-          </tr>
-          <tr>
-            <td><strong>目的外利用の禁止</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>送信されたデータは仕分け・不備照合などのサービス提供目的のみに使用し、二次利用・第三者提供を行いません。</td>
-          </tr>
-          <tr>
-            <td><strong>安全環境での解析</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>クラウド非送信のブラウザ内処理ツールおよび、日本国内セキュリティ要件を満たした保護領域で解析を実行します。</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.8rem;">4. アクセス制御・セキュリティ管理</h2>
-      <table class="sec-table">
-        <thead>
-          <tr>
-            <th style="width: 28%;">管理項目</th>
-            <th style="width: 18%;">体制</th>
-            <th>詳細・補足説明</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>ユーザー認証機能</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>個別ユーザーID・パスワードによる認証を実施します。</td>
-          </tr>
-          <tr>
-            <td><strong>アクセス権限の分離</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>事業所内での管理者権限・一般ユーザー権限など最小権限原則に基づくアクセス制御が可能です。</td>
-          </tr>
-          <tr>
-            <td><strong>操作・アクセスログ保存</strong></td>
-            <td><span class="badge-yes">適合 (Yes)</span></td>
-            <td>システムのログイン履歴、主要データの変更・削除等の操作ログを記録・保管します。</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div style="background: rgba(15, 23, 42, 0.6); padding: 1.2rem; border-radius: 8px; border-left: 4px solid #34d399; font-size: 0.85rem; color: #cbd5e1;">
-        ※本シートの内容は、法人・社会福祉法人様の導入事前審査等にご提出いただけます。特定の指定フォーマット（Excel形式等）での提出が必要な場合は、個別にご対応いたしますのでお気軽にお申し付けください。
+      <div class="note-box" style="background: rgba(15, 23, 42, 0.6); padding: 0.6rem 0.8rem; border-radius: 6px; border-left: 3px solid #34d399; font-size: 0.78rem; color: #cbd5e1;">
+        ※本シートは法人・社会福祉法人様の事前導入審査等にご提出いただけます。貴社指定のExcelフォーマット等への記入提出が必要な場合は、個別迅速に対応いたしますのでお申し付けください。
       </div>
 
     </div>
