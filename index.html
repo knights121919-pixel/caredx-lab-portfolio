@@ -989,14 +989,13 @@
             </div>
 
             <div class="form-group">
-              <label for="cUsersCount">ご利用予定人数（ケアマネジャー・スタッフ数）</label>
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <input type="number" id="cUsersCount" min="1" max="999" placeholder="例: 3" style="width: 140px; font-size: 1rem; padding: 0.65rem 0.8rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: #ffffff;">
-                <span style="color: #cbd5e1; font-weight: 600; font-size: 0.95rem;">名</span>
-              </div>
-              <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.35rem; margin-bottom: 0;">
-                ※デモアカウント・初期ライセンス発行用に使用するため、正確な人数（例: 3人、8人など）をご入力ください。
-              </p>
+              <label for="cPlan">ご検討・ご希望の料金プラン</label>
+              <select id="cPlan">
+                <option value="🔵 スタンダードプラン（1〜10名使い放題・月額9,800円）">🔵 スタンダードプラン（1〜10名使い放題・月額9,800円）</option>
+                <option value="🟢 ライトプラン（1名専用・月額3,980円）">🟢 ライトプラン（1名専用・月額3,980円）</option>
+                <option value="🟣 エンタープライズ（11名以上〜・月額29,800円〜）">🟣 エンタープライズ（11名以上〜・月額29,800円〜）</option>
+                <option value="未定・相談して決めたい">未定・相談して決めたい</option>
+              </select>
             </div>
 
             <div class="form-group">
