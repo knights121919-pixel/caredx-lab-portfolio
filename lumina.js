@@ -500,5 +500,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-});
+  // ==========================================
+  // Plan Selector Automation to Contact Form
+  // ==========================================
+  const planSelectBtns = document.querySelectorAll('[data-select-plan]');
+  const cPlanSelect = document.getElementById('cPlan');
 
+  if (planSelectBtns.length > 0 && cPlanSelect) {
+    planSelectBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const planValue = btn.getAttribute('data-select-plan');
+        if (planValue) {
+          cPlanSelect.value = planValue;
+          
+          // Flash highlight animation for clear visual feedback
+          cPlanSelect.style.transition = 'all 0.3s ease';
+          cPlanSelect.style.borderColor = '#38bdf8';
+          cPlanSelect.style.boxShadow = '0 0 15px rgba(56, 189, 248, 0.6)';
+          cPlanSelect.style.backgroundColor = 'rgba(56, 189, 248, 0.15)';
+          
+          setTimeout(() => {
+            cPlanSelect.style.borderColor = '';
+            cPlanSelect.style.boxShadow = '';
+            cPlanSelect.style.backgroundColor = '';
+          }, 1500);
+        }
+      });
+    });
+  }
+
+});
